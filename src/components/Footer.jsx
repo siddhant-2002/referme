@@ -1,11 +1,8 @@
-// Footer.jsx
-
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="p-4 bg-gray-800 text-center text-white">
             <p>© 2022 Study Material Website. All rights reserved.</p>
         </footer>
     );
