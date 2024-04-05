@@ -1,4 +1,5 @@
 import React from "react";
+import Features from "./Features";
 
 const Body = () => {
 	return (
@@ -72,6 +73,9 @@ const Body = () => {
 					/>
 				</div> */}
 			</div>
+
+			{/* features */}
+			<Features />
 
 			{/* contact us */}
 

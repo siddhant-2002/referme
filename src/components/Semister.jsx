@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Year = () => {
-    const years = ['FE', 'SE', 'TE', 'BE'];
+const Semister = () => {
+    const semisters = ['Sem-I', 'Sem-II'];
 
     return (
         <div className="flex flex-wrap justify-center gap-4 p-5">
-            {years.map((year, index) => (
-                <Link to="/semister" key={index}>
+            {semisters.map((semister, index) => (
+                <Link to="/subject" key={index}>
                     <div className="flex items-center justify-center w-64 h-32 bg-blue-500 text-white rounded shadow-lg">
-                        <h2 className="text-2xl">{year}</h2>
+                        <h2 className="text-2xl">{semister}</h2>
                     </div>
                 </Link>
             ))}
@@ -17,4 +17,4 @@ const Year = () => {
     );
 }
 
-export default Year;
+export default Semister;
