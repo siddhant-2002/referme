@@ -7,7 +7,13 @@ module.exports = {
     extend: {
       fontFamily: {
         'body': ['Noto Sans', 'sans-serif']
-      }
+      },
+      colors: {
+        'dark-blue': '#003C43',
+        'teal': '#135D66',
+        'light-teal': '#77B0AA',
+        'off-white': '#E3FEF7',
+      },
     },
   },
   plugins: [],
