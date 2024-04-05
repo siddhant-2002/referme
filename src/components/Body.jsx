@@ -3,14 +3,13 @@ import Contactus from "./Contactus";
 import Aboutus from "./Aboutus";
 import Home from "./Home";
 import Features from "./Features";
-
+import Mission from "./Mission";
 
 const Body = () => {
 	return (
 		<div className="min-h-screen bg-off-white text-teal">
 
 			<Home/>
-			
 			{/* <div className="flex justify-between p-4 bg-teal">
 				<p className="text-lg font-semibold text-off-white">
 					This is some text on the left.
@@ -26,8 +25,11 @@ const Body = () => {
 			</div> */}
 			{/* features */}
 			<Features />
+		
+
 			<Aboutus/>
 
+			<Mission/>
 
 			<Contactus/>
 
