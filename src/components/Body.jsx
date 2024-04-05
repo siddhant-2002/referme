@@ -26,10 +26,11 @@ const Body = () => {
 			{/* features */}
 			<Features />
 		
+			<Mission/>
 
 			<Aboutus/>
 
-			<Mission/>
+			
 
 			<Contactus/>
 
