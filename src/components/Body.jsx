@@ -24,14 +24,14 @@ const Body = () => {
 					and excellence.
 				</p>
 			</div> */}
-
+			{/* features */}
+			<Features />
 			<Aboutus/>
 
 
 			<Contactus/>
 
-			{/* features */}
-			<Features />
+			
 
 			
 
