@@ -2,6 +2,9 @@ import React from "react";
 import Contactus from "./Contactus";
 import Aboutus from "./Aboutus";
 import Home from "./Home";
+import Features from "./Features";
+
+
 const Body = () => {
 	return (
 		<div className="min-h-screen bg-off-white text-teal">
@@ -24,7 +27,14 @@ const Body = () => {
 
 			<Aboutus/>
 
+
 			<Contactus/>
+
+			{/* features */}
+			<Features />
+
+			
+
 		</div>
 
 	);
