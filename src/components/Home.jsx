@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div>
 			<div className="container mx-auto px-4 p-20">
@@ -15,7 +18,7 @@ const Home = () => {
 							Online Haven for Study Materials, Handwritten Notes,
 							and Practical Codes
 						</p>
-						<button className="mt-4 bg-teal hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded">
+						<button className="mt-4 bg-teal hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded"onClick={() => navigate('/Year')}>
 							Explore Now
 						</button>
 					</div>
