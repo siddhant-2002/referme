@@ -14,6 +14,10 @@ module.exports = {
         'light-teal': '#77B0AA',
         'off-white': '#E3FEF7',
       },
+      animation: {
+        'fade-in-left': 'fadeInLeft 2s ease-in-out',
+        'fade-in-right': 'fadeInRight 2s ease-in-out'
+      },
     },
   },
   plugins: [],

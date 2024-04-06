@@ -13,20 +13,20 @@ const Year = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center space-y-4 p-8">
         {['First Year', 'Second Year', 'Third Year', 'Fourth Year'].map((item, index) => (
-           <div key={index} className="w-full max-w-md p-4 border border-gray-300 rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out">
-           <button 
-               onClick={() => toggle(index)} 
-               className="w-full text-left font-bold text-lg text-dark-blue hover:text-teal focus:outline-none "
-           >
-               {item}
-           </button>
-           {expanded[index] && (
-               <div className="mt-2 space-y-2 rounded-md transition-all duration-200 ease-in-out transform ">
-               <button className="w-full text-left bg-dark-blue hover:bg-teal text-off-white py-2 px-4 rounded-md font-semibold text-lg transition-colors duration-200 hover:scale-105">Semistar 1</button>
-               <button className="w-full text-left bg-dark-blue hover:bg-teal text-off-white py-2 px-4 rounded-md font-semibold text-lg transition-colors duration-200 hover:scale-105">Semister 2</button>
-           </div>
-           )}
-       </div>
+        <div key={index} className="w-full max-w-md p-6 border border-gray-300 rounded-md shadow-md hover:shadow-2xl transition-shadow duration-500 ease-in-out m-4 ">
+        <button 
+          onClick={() => toggle(index)} 
+          className="w-full text-left font-bold text-lg text-dark-blue hover:text-teal focus:outline-none "
+        >
+          {item}
+        </button>
+        {expanded[index] && (
+          <div className="mt-4 space-y-4 rounded-md transition-all duration-200 ease-in-out transform ">
+            <button className="w-full text-left bg-dark-blue hover:bg-teal text-off-white py-3 px-6 rounded-md font-semibold text-lg transition-colors duration-200 hover:scale-105">Semester 1</button>
+            <button className="w-full text-left bg-dark-blue hover:bg-teal text-off-white py-3 px-6 rounded-md font-semibold text-lg transition-colors duration-200 hover:scale-105">Semester 2</button>
+          </div>
+        )}
+      </div>
         ))}
     </div>
     );
