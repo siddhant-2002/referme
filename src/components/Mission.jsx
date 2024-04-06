@@ -4,7 +4,7 @@ const mission = () => {
 	return (
 		<div>
 			<div className="container mx-auto px-4 p-10">
-				<div className="flex flex-col md:flex-row justify-between ">
+				<div className="flex flex-col md:flex-row justify-between animate-fade-in-left ">
 					<div className="w-full md:w-1/2 flex justify-center items-center">
 						<img
 							src="mission.png"
@@ -12,7 +12,7 @@ const mission = () => {
 							className="w-3/4 h-auto mr-4"
 						/>
 					</div>
-					<div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+					<div className="w-full md:w-1/2 flex flex-col items-center justify-center animate-fade-in-right">
                     <h2 className="text-4xl font-semibold mb-4 font-body">
 						Our Mission
 					</h2>
@@ -28,6 +28,7 @@ const mission = () => {
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	);
 };

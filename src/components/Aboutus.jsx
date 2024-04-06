@@ -11,7 +11,7 @@ const Aboutus = () => {
 					</h2>
 					<p className="text-xl leading-relaxed text-center">
 						Welcome to{" "}
-						<span className="text-light-teal">Refer ME...!</span> We
+						<span className="text-white text-bold">Refer ME...!</span> We
 						are a group of passionate engineering students dedicated
 						to revolutionizing the way students learn and
 						collaborate in their academic journeys.
