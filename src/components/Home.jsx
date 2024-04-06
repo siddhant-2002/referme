@@ -8,7 +8,7 @@ const Home = () => {
 		<div>
 			<div className="container mx-auto px-4 p-20">
 				<div className="flex flex-col md:flex-row justify-between py-8">
-					<div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+					<div className="w-full md:w-1/2 flex flex-col items-center justify-center animate-fade-in-left">
 						<h2 className="text-4xl font-bold mb-4 text-teal">
 							Welcome to{" "}
 							<span className="text-dark-blue">Refer ME...!</span>
@@ -22,7 +22,7 @@ const Home = () => {
 							Explore Now
 						</button>
 					</div>
-					<div className="w-full md:w-1/2 flex justify-center">
+					<div className="w-full md:w-1/2 flex justify-center animate-fade-in-right">
 						<img
 							src="mainimg.png"
 							className="w-3/4 h-auto"

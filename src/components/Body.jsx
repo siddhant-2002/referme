@@ -4,9 +4,7 @@ import Aboutus from "./Aboutus";
 import Home from "./Home";
 import Features from "./Features";
 import Mission from "./Mission";
-import Year from "./Year";
 
-import Subject from "./Subject";
 
 
 const Body = () => {

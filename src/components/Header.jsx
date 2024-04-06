@@ -8,7 +8,7 @@ const Header = () => {
         <nav className="flex flex-col sm:flex-row sm:justify-between">
             <ul className="flex flex-col sm:flex-row gap-8 justify-between">
                 <li><a href="/" className="text-lg hover:text-light-teal text-off-white">Home</a></li>
-                <li><a href="/About Us" className="text-lg hover:text-light-teal text-off-white">About Us</a></li>
+                <li><a href="#about-us" className="text-lg hover:text-light-teal text-off-white">About Us</a></li>
                 <li><a href="/videos" className="text-lg hover:text-light-teal text-off-white">Mission</a></li>
                 <li><a href="/articles" className="text-lg hover:text-light-teal text-off-white">Features</a></li>
                 <li><a href="/articles" className="text-lg hover:text-light-teal text-off-white">Contact Us</a></li>
