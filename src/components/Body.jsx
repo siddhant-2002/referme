@@ -1,15 +1,17 @@
 import React from "react";
-import Contactus from "./Contactus";
-import Aboutus from "./Aboutus";
-import Home from "./Home";
-import Features from "./Features";
-import Mission from "./Mission";
+// import Contactus from "./Contactus";
+// import Aboutus from "./Aboutus";
+// import Home from "./Home";
+// import Features from "./Features";
+// import Mission from "./Mission";
+import Year from "./Year";
+// import Year from "./Year";
 
 const Body = () => {
 	return (
 		<div className="min-h-screen bg-off-white text-teal">
 
-			<Home/>
+			{/* <Home/>
 			
 			<Aboutus/>
 		
@@ -17,7 +19,13 @@ const Body = () => {
 
 			<Features/>
 
-			<Contactus/>
+
+			<Contactus/> */}
+
+			<Year/>
+
+
+			
 
 		</div>
 
