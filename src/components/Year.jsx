@@ -15,7 +15,7 @@ const Year = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="w-full flex flex-col items-center justify-center space-y-4 p-8">
+        <div className="w-full flex flex-col items-center justify-center space-y-4 p-8 bg-off-white">
         {['First Year', 'Second Year', 'Third Year', 'Fourth Year'].map((item, index) => (
            <div key={index} className="w-full max-w-md p-4 border border-gray-300 rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out">
            <button 

@@ -10,7 +10,7 @@ const Subject = () => {
     };
 
     return (
-        <div className="w-full flex flex-col items-center justify-center space-y-4 p-8">
+        <div className="w-full flex flex-col items-center justify-center space-y-4 p-8 bg-off-white">
         {['Engineering Mathematics I(M-I)', 'Engineering Physics', 'System in Mechanical Engineering(SME)', 'Programming and Problem Solving(PPS)', 'Basic Electrical Enginnering(BEE)'].map((item, index) => (
            <div key={index} className="w-full max-w-md p-4 border border-gray-300 rounded-md shadow-md hover:shadow-2xl transition-shadow duration-500 ease-in-out">
            <button 
