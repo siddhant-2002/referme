@@ -6,12 +6,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Subject from './components/Subject';
 import './App.css';
 import Body from './components/Body';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        
+      <ToastContainer />
         <Routes>
           <Route path="/" element={<><Header/><Body/><Footer/></>} />
           <Route path="Year/*" element={<><Header/><Year/><Footer/></>} />

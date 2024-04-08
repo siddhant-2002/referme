@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const contactus = () => {
+const Contactus = () => {
+	const form = useRef();
+	const sendEmail = (e) => {
+		e.preventDefault();
+	
+		emailjs
+		  .sendForm('service_53xegjv', 'template_ckkuztf', form.current, {
+			publicKey: 'dw_4w5q7Uh-bafJom',
+		  })
+		  .then(
+			() => {
+				toast.success('Form submitted successfully!');
+			},
+			(error) => {
+				toast.error('There was an error submitting the form.');
+				console.log('FAILED...', error.text);
+			},
+		  );
+	  };
+
+
 	return (
 		<div>
 			<div id="contactus" className=" md:flex-row justify-between  ">
@@ -18,7 +41,7 @@ const contactus = () => {
 								<h2 className="text-4xl font-bold mb-4 text-teal">
 									Contact Us
 								</h2>
-								<form className=" w-full flex flex-col">
+								<form ref={form} onSubmit={sendEmail} className=" w-full flex flex-col">
 									<label
 										htmlFor="name"
 										className="text-lg font-body mb-2"
@@ -28,6 +51,7 @@ const contactus = () => {
 									<input
 										type="text"
 										id="name"
+										name="user_name"
 										className=" w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your name"
 									/>
@@ -41,6 +65,7 @@ const contactus = () => {
 									<input
 										type="email"
 										id="email"
+										name="user_email"
 										className="w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your email"
 									/>
@@ -53,6 +78,7 @@ const contactus = () => {
 									</label>
 									<textarea
 										id="message"
+										name="message"
 										className="w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your message"
 										rows="4"
@@ -74,4 +100,4 @@ const contactus = () => {
 	);
 };
 
-export default contactus;
+export default Contactus;
