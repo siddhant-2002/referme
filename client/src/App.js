@@ -7,7 +7,8 @@ import Subject from "./components/Subject";
 import "./App.css";
 import Body from "./components/Body";
 import {ToastContainer} from "react-toastify";
-import Form from "./components//Form";
+import Form from "./components/Form";
+import User from "./components/User";
 
 function App() {
 	return (
@@ -50,6 +51,14 @@ function App() {
 						element={
 							<>
 								<Form />
+							</>
+						}
+					/>
+					<Route
+						path="User/"
+						element={
+							<>
+								<User />
 							</>
 						}
 					/>

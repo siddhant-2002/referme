@@ -4,7 +4,8 @@ import Aboutus from "./Aboutus";
 import Home from "./Home";
 import Features from "./Features";
 import Mission from "./Mission";
-import Form from "./Form";
+// import Form from "./Form";
+// import User from "./User";
 
 
 
@@ -24,6 +25,7 @@ const Body = () => {
 			<Contactus />
 
 			{/* <Form /> */}
+			{/* <User /> */}
 
 
 		</div>
