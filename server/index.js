@@ -11,22 +11,17 @@ mongoose.connect("mongodb://localhost:27017/admin");
 
 app.post("/Form", async (req, res) => {
 	const {email, password} = req.body;
-	const user = await Admin.findOne({email : email})
-	.then(user =>{
-		if(user){
-			if(user.password === password){
-				res.json("true")
+	const user = await Admin.findOne({email: email}).then((user) => {
+		if (user) {
+			if (user.password === password) {
+				res.json("true");
+			} else {
+				res.json("password is incorrect");
 			}
-			else{
-				res.json("password is incorrect")
-			}
+		} else {
+			res.json("no record  existed");
 		}
-		else{
-			res.json("no record  existed")
-		}
-	})
-
-		
+	});
 });
 
 app.listen(3000, () => {

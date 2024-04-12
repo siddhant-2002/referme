@@ -58,7 +58,9 @@ function App() {
 						path="User/"
 						element={
 							<>
+								<Header />
 								<User />
+								<Footer />
 							</>
 						}
 					/>
