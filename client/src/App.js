@@ -8,7 +8,6 @@ import "./App.css";
 import Body from "./components/Body";
 import {ToastContainer} from "react-toastify";
 import Form from "./components/Form";
-// import User from "./components/User";
 import Upload from "./components/Upload";
 
 function App() {
@@ -16,6 +15,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<ToastContainer />
+				<Upload/>
 				<Routes>
 					<Route
 						path="/"

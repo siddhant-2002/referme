@@ -11,7 +11,7 @@ const Form = () => {
     e.preventDefault()
     axios.post('http://localhost:5000/Form', { email, password })
       .then(result => {
-        console.log(result)
+
         if (result.data === "true") {
           navigate('/Upload')
         }

@@ -24,9 +24,6 @@ const Body = () => {
 
 			<Contactus />
 
-			{/* <Form /> */}
-			{/* <User /> */}
-
 
 		</div>
 
