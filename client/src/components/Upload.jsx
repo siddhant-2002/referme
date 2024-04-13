@@ -5,23 +5,19 @@ import app from '../firebase';
 
 const Upload = () => {
 
-  const [img, setImg] = useState(undefined);
-  const [video, setVideo] = useState(undefined);
-  const [imgPerc, setImgPerc] = useState(0);
-  const [videoPerc, setVideoPerc] = useState(0);
+  const [pdf, setPdf] = useState(undefined);
+  
+  const [pdfPerc, setPdfPerc] = useState(0);
+  
   const [inputs, setInputs] = useState({});
 
   useEffect(() => {
-    video && uploadFile(video, "videoUrl");
-  }, [video]);
-
-  useEffect(() => {
-    img && uploadFile(img, "imgUrl");
-  }, [img]);
+    pdf && uploadFile(pdf, "pdfUrl");
+  }, [pdf]);
 
   const uploadFile = (file, fileType) => {
     const storage = getStorage(app);
-    const folder = fileType === "imgUrl" ? "images/" : "videos/";
+    const folder = "Pdf/";
     const fileName = new Date().getTime() + file.name;
     const storageRef = ref(storage, folder + fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
@@ -32,19 +28,10 @@ const Upload = () => {
       (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        fileType === "imgUrl"
-          ? setImgPerc(Math.round(progress))
-          : setVideoPerc(Math.round(progress));
-        switch (snapshot.state) {
-          case "paused":
-            console.log("Upload is paused");
-            break;
-          case "running":
-            console.log("Upload is running");
-            break;
-          default:
-            break;
+        if(fileType === "pdfUrl"){
+          setPdfPerc(Math.round(progress));
         }
+
       },
       (error) => {
         console.log(error);
@@ -66,7 +53,7 @@ const Upload = () => {
       () => {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log('DownloadURL - ', downloadURL);
+          // console.log('DownloadURL - ', downloadURL);
           setInputs((prev) => {
             return {
               ...prev,
@@ -81,7 +68,7 @@ const Upload = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:5000/api/videos`, { ...inputs });
+      await axios.post(`http://localhost:5000/api/pdfs`, { ...inputs });
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -92,24 +79,13 @@ const Upload = () => {
     <div className="upload">
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="video">Video:</label> {videoPerc > 0 && "Uploading: " + videoPerc + "%"}
+          <label htmlFor="pdf">Pdf:</label> {pdfPerc > 0 && "Uploading: " + pdfPerc + "%"}
           <br />
           <input
             type="file"
-            accept="video/*"
-            id="video"
-            onChange={(e) => setVideo((prev) => e.target.files[0])}
-          />
-        </div>
-        <br />
-        <div>
-          <label htmlFor="img">Image:</label> {imgPerc > 0 && "Uploading: " + imgPerc + "%"}
-          <br />
-          <input
-            type="file"
-            accept="image/*"
-            id="img"
-            onChange={(e) => setImg((prev) => e.target.files[0])}
+            accept="Pdf/*"
+            id="pdf"
+            onChange={(e) => setPdf((prev) => e.target.files[0])}
           />
         </div>
         <br />

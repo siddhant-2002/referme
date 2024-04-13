@@ -9,11 +9,11 @@ const Form = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/Form', { email, password })
+    axios.post('http://localhost:5000/Form', { email, password })
       .then(result => {
         console.log(result)
         if (result.data === "true") {
-          navigate('/User')
+          navigate('/Upload')
         }
 
       })

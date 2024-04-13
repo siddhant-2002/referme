@@ -1,13 +1,12 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const Admin = require("./models/admin");
-
+const connectDB = require("./config/database");
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/admin");
 
 app.post("/Form", async (req, res) => {
 	const {email, password} = req.body;
@@ -15,6 +14,7 @@ app.post("/Form", async (req, res) => {
 		if (user) {
 			if (user.password === password) {
 				res.json("true");
+				console.log("true");
 			} else {
 				res.json("password is incorrect");
 			}
@@ -24,6 +24,14 @@ app.post("/Form", async (req, res) => {
 	});
 });
 
-app.listen(3000, () => {
-	console.log("server is running at port 3000");
+require('dotenv').config();
+const PORT = process.env.PORT || 4000;
+
+connectDB();
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
 });
+
+
+const pdfRoutes = require('./routes/pdf');
+app.use("/api/pdfs", pdfRoutes);
