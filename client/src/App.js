@@ -15,7 +15,6 @@ function App() {
 		<Router>
 			<div className="App">
 				<ToastContainer />
-				<Upload/>
 				<Routes>
 					<Route
 						path="/"
