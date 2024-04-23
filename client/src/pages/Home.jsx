@@ -18,7 +18,7 @@ const Home = () => {
 							Online Haven for Study Materials, Handwritten Notes,
 							and Practical Codes
 						</p>
-						<button className="mt-4 bg-teal hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Year')}>
+						<button className="mt-4 bg-teal hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded" onClick={() => navigate('/Search')}>
 							Explore Now
 						</button>
 					</div>

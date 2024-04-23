@@ -1,11 +1,9 @@
 import React from "react";
 import Contactus from "./Contactus";
 import Aboutus from "./Aboutus";
-import Home from "./Home";
+import Home from "../pages/Home";
 import Features from "./Features";
 import Mission from "./Mission";
-// import Form from "./Form";
-// import User from "./User";
 
 
 
@@ -23,6 +21,8 @@ const Body = () => {
 
 
 			<Contactus />
+
+			{/* <Main /> */}
 
 
 		</div>

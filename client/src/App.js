@@ -1,14 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Year from "./components/Year";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Subject from "./components/Subject";
 import "./App.css";
 import Body from "./components/Body";
 import {ToastContainer} from "react-toastify";
-import Form from "./components/Form";
-import Upload from "./components/Upload";
+import Form from "./pages/Form";
+import Upload from "./pages/Upload";
+import Search from "./pages/Search";
 
 function App() {
 	return (
@@ -27,16 +26,16 @@ function App() {
 						}
 					/>
 					<Route
-						path="Year/*"
+						path="Search/*"
 						element={
 							<>
 								<Header />
-								<Year />
+								<Search/>
 								<Footer />
 							</>
 						}
 					/>
-					<Route
+					{/* <Route
 						path="Subject/*"
 						element={
 							<>
@@ -45,7 +44,7 @@ function App() {
 								<Footer />
 							</>
 						}
-					/>
+					/> */}
 					<Route
 						path="Form/"
 						element={
