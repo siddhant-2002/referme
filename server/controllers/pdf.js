@@ -1,7 +1,7 @@
 const pdf = require('../models/pdf');
 
 exports.pdf = async (req, res, next) => {
-    const { pdfUrl} = req.body;
+    const { pdfUrl, year, semester, subject, type, subtype} = req.body;
 
   if (!pdfUrl) {
     res.status(400);
@@ -11,11 +11,23 @@ exports.pdf = async (req, res, next) => {
   try {
     const pdfs = await pdf.create({
       pdfUrl,
+      year,
+      semester,
+      subject,
+      type,
+      subtype
     });
 
     res.status(201).json({
       success: true,
-      pdfs,
+      // pdfs,
+      pdfUrl,
+      year,
+      semester,
+      subject,
+      type,
+      subtype
+
     });
   } catch (error) {
     console.log(error);
