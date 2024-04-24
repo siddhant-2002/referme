@@ -63,6 +63,8 @@
 // export default Search
 
 import React, { useState } from 'react';
+import axios from 'axios';
+
 
 const subjects = {
     "First Year": {
@@ -74,12 +76,15 @@ const subjects = {
 
 
 
+
+
 function Search() {
     const [year, setYear] = useState("");
     const [semester, setSemester] = useState("");
     const [type, setType] = useState("");
     const [subject, setSubject] = useState("");
     const [subtype, setSubtype] = useState("");
+    const [data, setData] = useState([]);
     const [notes, setNotes] = useState({
         year: "",
         semester: "",
@@ -111,12 +116,27 @@ function Search() {
             setSubject(value);
         }
 
-        else if(name === "subtype")
-        {
+        else if (name === "subtype") {
             setSubtype(value);
         }
     };
 
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get(`http://localhost:5000/api/pdfs`, {
+                params: {
+                    year: notes.year,
+                    semester: notes.semester,
+                    subject: notes.subject,
+                    type: notes.type,
+                    subtype: notes.subtype,
+                },
+            });
+            setData(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     const filteredSubjects = year && semester ? subjects[year][semester] : [];
 
     return (
@@ -150,7 +170,7 @@ function Search() {
                     </select>
 
                     {notes.type === "Notes" && (
-                        <select onChange={handleChange} name="subtype" value={subtype}className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+                        <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
                             <option value="Unit 1">Unit 1</option>
                             <option value="Unit 2">Unit 2</option>
                             <option value="Unit 3">Unit 3</option>
@@ -173,12 +193,21 @@ function Search() {
                         <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
                             <option value="2018">2018</option>
                             <option value="2019">2019</option>
-                           
+
                         </select>
                     )}
 
-                    <button className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
+                    <button onClick={handleSearch} className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
+
                 </div>
+                {data.map((item, index) => (
+                    <div key={index} className="card mx-auto my-4 p-4 shadow-lg w-1/2 border border-gray-300">
+                        <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
+                        <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Open PDF
+                        </a>
+                    </div>
+                ))}
             </div>
         </div>
     )
