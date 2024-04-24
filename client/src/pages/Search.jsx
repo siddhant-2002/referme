@@ -129,7 +129,7 @@ function Search() {
                     semester: notes.semester,
                     subject: notes.subject,
                     type: notes.type,
-                    subtype: notes.subtype,
+                    
                 },
             });
             setData(response.data);
@@ -169,7 +169,7 @@ function Search() {
                         <option value="PYQ'S">PYQ'S</option>
                     </select>
 
-                    {notes.type === "Notes" && (
+                    {/* {notes.type === "Notes" && (
                         <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
                             <option value="Unit 1">Unit 1</option>
                             <option value="Unit 2">Unit 2</option>
@@ -195,7 +195,7 @@ function Search() {
                             <option value="2019">2019</option>
 
                         </select>
-                    )}
+                    )} */}
 
                     <button onClick={handleSearch} className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
 
