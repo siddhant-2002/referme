@@ -68,8 +68,8 @@ import axios from 'axios';
 
 const subjects = {
     "First Year": {
-        "semester 1": ["M 1", "BEE", "BXE"],
-        "semester 2": ["PHY", "CHEM", "EME"]
+        "semester 1": ["","M 1", "BEE", "BXE"],
+        "semester 2": ["","PHY", "CHEM", "EME"]
     },
     // Add other years and semesters here
 };
