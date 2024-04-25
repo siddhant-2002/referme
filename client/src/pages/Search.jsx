@@ -116,9 +116,9 @@ function Search() {
 
     return (
         <div>
-            <div>
-                <div className='flex gap-4 my-10 justify-center px-10'>
-                    <select onChange={handleChange} name="year" value={year} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+            <div className=''>
+                <div className='flex gap-4 my-10 justify-center px-10 w-full'>
+                    <select onChange={handleChange} name="year" value={year} className='w-64 py-3 pl-4 bg-transparant font-semibold rounded-md'>
                         <option value="" disabled hidden> Year </option>
                         <option value="First Year">First Year</option>
                         <option value="Second Year">Second Year</option>
@@ -158,14 +158,17 @@ function Search() {
                     <button onClick={handleSearch} className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
 
                 </div>
+                <div className='flex text-white'>
                 {data.map((item, index) => (
-                    <div key={index} className="card mx-auto my-4 p-4 shadow-lg w-1/2 border border-gray-300">
+                    <div key={index} className="card mx-auto my-4 p-4  shadow-lg w-1/2 border border-gray-300">
                         <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
                         <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Open PDF
                         </a>
                     </div>
                 ))}
+                </div>
+              
             </div>
         </div>
     )

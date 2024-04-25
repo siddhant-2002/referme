@@ -25,7 +25,7 @@ const Contactus = () => {
 
 
 	return (
-		<div className='text-white'>
+		<div className=" m-10 text-white rounded-xl bg-transparent border border-purple-400 hover:border-purple-500  hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
 			<div id="contactus" className=" md:flex-row justify-between  ">
 				<div className="min-h-screen">
 					<div className="container mx-auto px-4 ">
@@ -86,7 +86,7 @@ const Contactus = () => {
 
 									<button
 										type="submit"
-										className="mt-4 border-100 hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded"
+										className="mt-4 border-100 text-off-white py-2 px-4 rounded hover:border hover:border-purple-500"
 									>
 										Send Message
 									</button>

@@ -28,18 +28,38 @@ const Header = () => {
 
                 <nav className="flex flex-col sm:flex-row sm:justify-between">
                     {/* <ul className="flex flex-col sm:flex-row gap-8 justify-between">
-                        <li><a href="/" className="text-lg hover:text-light-teal text-off-white">Home</a></li>
-                        <li><Link to="/#about-us" className="text-lg hover:text-light-teal text-off-white">About Us</Link></li>
-                        <li><Link to="/#mission" className="text-lg hover:text-light-teal text-off-white">Mission</Link></li>
-                        <li><Link to="/#features" className="text-lg hover:text-light-teal text-off-white">Features</Link></li>
-                        <li><Link to="/#contactus" className="text-lg hover:text-light-teal text-off-white">Contact Us</Link></li>
+                        <li><a href="/" className="text-lg hover:text-purple-500 text-off-white">Home</a></li>
+                        <li><Link to="/#about-us" className="text-lg hover:text-purple-500 text-off-white">About Us</Link></li>
+                        <li><Link to="/#mission" className="text-lg hover:text-purple-500 text-off-white">Mission</Link></li>
+                        <li><Link to="/#features" className="text-lg hover:text-purple-500 text-off-white">Features</Link></li>
+                        <li><Link to="/#contactus" className="text-lg hover:text-purple-500 text-off-white">Contact Us</Link></li>
                     </ul> */}
                     <ul className="flex flex-col sm:flex-row gap-8 justify-between">
-                        <li><a href="/" className="text-lg hover:text-light-teal text-off-white  hover:bg-cyan-950 hover:text-off-white px-5 py-3 rounded-full transition-all duration-200 ">Home</a></li>
-                        <li><Link to="/#about-us" className="text-lg hover:text-light-teal text-off-white hover:bg-cyan-950 hover:text-off-white px-5 py-3 rounded-full transition-all duration-200">About Us</Link></li>
-                        <li><Link to="/#mission" className="text-lg hover:text-light-teal text-off-white hover:bg-cyan-950 hover:text-off-white px-5 py-3 rounded-full transition-all duration-200">Mission</Link></li>
-                        <li><Link to="/#features" className="text-lg hover:text-light-teal text-off-white hover:bg-cyan-950 hover:text-off-white px-5 py-3 rounded-full transition-all duration-200">Features</Link></li>
-                        <li><Link to="/#contactus" className="text-lg hover:text-light-teal text-off-white hover:bg-cyan-950 hover:text-off-white px-5 py-3 rounded-full transition-all duration-200">Contact Us</Link></li>
+                    <li>
+  <a href="/" className="text-lg hover:text-purple-500 text-off-white hover:bg-transparent text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+    Home
+  </a>
+</li>
+<li>
+  <Link to="/#about-us" className="text-lg hover:text-purple-500 text-off-white bg-transparent hover:border  hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+    About Us
+  </Link>
+</li>
+<li>
+  <Link to="/#mission" className="text-lg hover:text-purple-500 text-off-white bg-transparent hover:border  hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+    Mission
+  </Link>
+</li>
+<li>
+  <Link to="/#features" className="text-lg hover:text-purple-500 text-off-white bg-transparent hover:border  hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+    Features
+  </Link>
+</li>
+<li>
+  <Link to="/#contactus" className="text-lg hover:text-purple-500 text-off-white bg-transparent hover:border  hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+    Contact Us
+  </Link>
+</li>
                     </ul>
                 </nav>
             </div>
