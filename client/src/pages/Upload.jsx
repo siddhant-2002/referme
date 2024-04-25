@@ -136,7 +136,7 @@ const Upload = () => {
   const [semester, setSemester] = useState("");
   const [type, setType] = useState("");
   const [subject, setSubject] = useState("");
-  const [subtype, setSubtype] = useState("");
+  const [subtypes, setSubtypes] = useState([]);
   const [branch, setBranch] = useState("");
   const [branches, setBranches] = useState([]);
   const [notes, setNotes] = useState({
@@ -167,11 +167,22 @@ const Upload = () => {
         setSemester(value);
       } else if (name === "type") {
         setType(value);
-        setSubtype("");
-      } else if (name === "subject") {
+        if (value === "Notes" || value === "PPT") {
+          setSubtypes(["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", "Unit 6"]);
+        } else if (value === "Tutorials") {
+          setSubtypes(["Tutorial 1", "Tutorial 2", "Tutorial 3", "Tutorial 4", "Tutorial 5", "Tutorial 6", "Tutorial 7", "Tutorial 8", "Tutorial 9", "Tutorial 10"]);
+        } else if (value === "PYQ'S") {
+          setSubtypes(["2018", "2019", "2020", "2021", "2022", "2023"]);
+        }
+        else if (value == "Practicals") {
+          setSubtypes(["Practical 1", "Practical 2", "Practical 3", "Practical 4", "Practical 5", "Practical 6"])
+        }
+        else {
+          setSubtypes([]);
+        }
+      }
+      else if (name === "subject") {
         setSubject(value);
-      } else if (name === "subtype") {
-        setSubtype(value);
       }
 
       return updatedNotes;
@@ -219,49 +230,15 @@ const Upload = () => {
             <option value="Tutorials">Tutorials</option>
           </select>
 
-          {(notes.type === "Notes" || notes.type === "PPT") && (
+          {notes.type && (
             <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-              <option value="Unit 1">Unit 1</option>
-              <option value="Unit 2">Unit 2</option>
-              <option value="Unit 3">Unit 3</option>
-              <option value="Unit 4">Unit 4</option>
-              <option value="Unit 5">Unit 5</option>
-              <option value="Unit 6">Unit 6</option>
-            </select>
-          )}
-          {notes.type === "Practicals" && (
-            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-              <option value="Practical 1">Practical 1</option>
-              <option value="Practical 2">Practical 2</option>
-              <option value="Practical 3">Practical 3</option>
-              <option value="Practical 4">Practical 4</option>
-              <option value="Practical 5">Practical 5</option>
-              <option value="Practical 6">Practical 6</option>
+              <option value="" disabled hidden>Select subtype</option>
+              {subtypes.map(subtype => (
+                <option key={subtype} value={subtype}>{subtype}</option>
+              ))}
             </select>
           )}
 
-          {notes.type === "PYQ'S" && (
-            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-
-            </select>
-          )}
-
-          {((notes.subject === 'M 1' || notes.subject === 'M 2') && notes.type === "Tutorials") && (
-            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-              <option value="Tutorial 1">Tutorial 1</option>
-              <option value="Tutorial 2">Tutorial 2</option>
-              <option value="Tutorial 3">Tutorial 3</option>
-              <option value="Tutorial 4">Tutorial 4</option>
-              <option value="Tutorial 5">Tutorial 5</option>
-              <option value="Tutorial 6">Tutorial 6</option>
-              <option value="Tutorial 7">Tutorial 7</option>
-              <option value="Tutorial 8">Tutorial 8</option>
-              <option value="Tutorial 9">Tutorial 9</option>
-              <option value="Tutorial 10">Tutorial 10</option>
-            </select>
-          )}
         </div>
       </div>
       <div className="flex items-center justify-center h-screen bg-off-white">
