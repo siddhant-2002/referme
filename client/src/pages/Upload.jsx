@@ -2,9 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from '../firebase';
-
-
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Upload = () => {
 
@@ -71,17 +70,18 @@ const Upload = () => {
   const handleSubmit = async (e) => {
     console.log(notes);
     e.preventDefault();
-    console.log(notes);
     try {
+      
       await axios.post(`http://localhost:5000/api/pdfs`, {
         ...inputs,
-        ...notes
-
-
-      });
+        ...notes,
+        
+    });
+      toast.success("Pdf uploaded successfully");
       window.location.reload();
     } catch (error) {
       console.log(error);
+      toast.error("An error occurred");
     }
   };
 
@@ -209,8 +209,6 @@ const Upload = () => {
               <option value="Tutorial 10">Tutorial 10</option>
             </select>
           )}
-
-          <button className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
         </div>
       </div>
       <div className="flex items-center justify-center h-screen bg-off-white">
@@ -226,7 +224,7 @@ const Upload = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             />
           </div>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+          <button type="submit"className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
             Upload
           </button>
         </form>
