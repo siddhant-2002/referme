@@ -134,9 +134,9 @@ const Upload = () => {
 
   const [year, setYear] = useState("");
   const [semester, setSemester] = useState("");
-  const [type, setType] = useState("");
-  const [subject, setSubject] = useState("");
-  const [subtypes, setSubtypes] = useState([]);
+  // const [type, setType] = useState("");
+  // const [subject, setSubject] = useState("");
+  // const [subtypes, setSubtypes] = useState([]);
   const [branch, setBranch] = useState("");
   const [branches, setBranches] = useState([]);
   const [notes, setNotes] = useState({
@@ -165,26 +165,7 @@ const Upload = () => {
         setSemester(""); // Reset semester when branch changes
       } else if (name === "semester") {
         setSemester(value);
-      } else if (name === "type") {
-        setType(value);
-        if (value === "Notes" || value === "PPT") {
-          setSubtypes(["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", "Unit 6"]);
-        } else if (value === "Tutorials") {
-          setSubtypes(["Tutorial 1", "Tutorial 2", "Tutorial 3", "Tutorial 4", "Tutorial 5", "Tutorial 6", "Tutorial 7", "Tutorial 8", "Tutorial 9", "Tutorial 10"]);
-        } else if (value === "PYQ'S") {
-          setSubtypes(["2018", "2019", "2020", "2021", "2022", "2023"]);
-        }
-        else if (value === "Practicals") {
-          setSubtypes(["Practical 1", "Practical 2", "Practical 3", "Practical 4", "Practical 5", "Practical 6"])
-        }
-        else {
-          setSubtypes([]);
-        }
-      }
-      else if (name === "subject") {
-        setSubject(value);
-      }
-
+      } 
       return updatedNotes;
     });
   };
@@ -230,14 +211,14 @@ const Upload = () => {
             <option value="Tutorials">Tutorials</option>
           </select>
 
-          {notes.type && (
-            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-              <option value="" disabled hidden>Select subtype</option>
-              {subtypes.map(subtype => (
-                <option key={subtype} value={subtype}>{subtype}</option>
-              ))}
-            </select>
-          )}
+          <input
+  type="text"
+  name="subtype"
+  value={notes.subtype}
+  onChange={handleChange}
+  className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'
+  placeholder="Enter subtype"
+/>
 
         </div>
       </div>
