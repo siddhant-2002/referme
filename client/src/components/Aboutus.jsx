@@ -5,7 +5,7 @@ const Aboutus = () => {
 		<div>
 			{/* About Us */}
 			<div id="about-us" className=" md:flex-row justify-between  ">
-				<div className=" flex flex-col items-center justify-center md:p-28 rounded-xl m-2 text-white bg-gradient-to-r from-[rgb(14,15,36)] to-[rgb(39,28,113)] backdrop-blur transition-all duration-2000">
+				<div className=" flex flex-col items-center justify-center md:p-28 rounded-xl m-2 text-white  backdrop-blur transition-all duration-2000">
 					<h2 className="text-4xl font-semibold mb-4 font-body">
 						About Us
 					</h2>

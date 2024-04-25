@@ -25,7 +25,7 @@ function App() {
 
 	return (
 		<Router>
-			<div className="App min-h-screen bg-gradient-to-r from-[rgb(10,10,10)] to-[rgb(20,20,20)] backdrop-blur transition-all duration-2000 ">
+			<div className="App min-h-screen bg-linear-gradient backdrop-blur transition-all duration-2000 ">
 				<ToastContainer />
 
 				<Routes>

@@ -2,7 +2,7 @@ import React from "react";
 
 const mission = () => {
 	return (
-		<div className=" text-white m-2 rounded-xl bg-gradient-to-r from-[rgb(24,25,46)] to-[rgb(49,38,123)] backdrop-blur transition-all duration-2000">
+		<div className=" text-white m-2 rounded-xl  backdrop-blur transition-all duration-2000">
 			<div id="mission" className=" md:flex-row justify-between  ">
 				<div className="container mx-auto px-4 p-10">
 					<div className="flex flex-col md:flex-row justify-between animate-fade-in-left ">

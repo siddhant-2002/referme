@@ -18,6 +18,16 @@ module.exports = {
         'fade-in-left': 'fadeInLeft 2s ease-in-out',
         'fade-in-right': 'fadeInRight 2s ease-in-out'
       },
+      backgroundImage: theme => ({
+        'radial-gradient': "radial-gradient(circle farthest-corner at 10% 20%, rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90%)",
+        'linear-gradient': "linear-gradient(90.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%)"
+      }),
+      backgroundColor: theme => ({
+        'whitish-blur': "rgba(255, 255, 255, 0.1)"
+      }),
+      backdropFilter: {
+        'blur': 'blur(20px)'
+      }
     },
   },
   plugins: [],

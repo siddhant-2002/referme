@@ -52,7 +52,7 @@ const Contactus = () => {
 										type="text"
 										id="name"
 										name="user_name"
-										className=" w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
+										className=" w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your name"
 									/>
 
@@ -66,7 +66,7 @@ const Contactus = () => {
 										type="email"
 										id="email"
 										name="user_email"
-										className="w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
+										className="w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your email"
 									/>
 
@@ -79,7 +79,7 @@ const Contactus = () => {
 									<textarea
 										id="message"
 										name="message"
-										className="w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
+										className="w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your message"
 										rows="4"
 									></textarea>
