@@ -34,11 +34,11 @@ const Contactus = () => {
 								<img
 									src="contactus.png"
 									alt="Logo"
-									className="w-full md:w-3/4 h-auto"
+									className="w-full  h-auto"
 								/>
 							</div>
 							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-24">
-								<h2 className="text-4xl font-bold mb-4">
+								<h2 className="text-4xl  mb-4">
 									Contact Us
 								</h2>
 								<form ref={form} onSubmit={sendEmail} className=" w-full flex flex-col">
