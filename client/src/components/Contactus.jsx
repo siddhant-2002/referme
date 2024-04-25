@@ -25,9 +25,9 @@ const Contactus = () => {
 
 
 	return (
-		<div>
+		<div className='text-white'>
 			<div id="contactus" className=" md:flex-row justify-between  ">
-				<div className="min-h-screen bg-off-white text-teal">
+				<div className="min-h-screen">
 					<div className="container mx-auto px-4 ">
 						<div className="flex flex-col md:flex-row justify-between py-8">
 							<div className="w-full md:w-1/2 flex justify-center items-center p-2">
@@ -38,7 +38,7 @@ const Contactus = () => {
 								/>
 							</div>
 							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-24">
-								<h2 className="text-4xl font-bold mb-4 text-teal">
+								<h2 className="text-4xl font-bold mb-4">
 									Contact Us
 								</h2>
 								<form ref={form} onSubmit={sendEmail} className=" w-full flex flex-col">
@@ -86,7 +86,7 @@ const Contactus = () => {
 
 									<button
 										type="submit"
-										className="mt-4 bg-teal hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded"
+										className="mt-4 border-100 hover:bg-light-teal text-off-white font-bold py-2 px-4 rounded"
 									>
 										Send Message
 									</button>

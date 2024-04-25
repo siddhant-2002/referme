@@ -9,7 +9,7 @@ import Mission from "./Mission";
 
 const Body = () => {
 	return (
-		<div className="min-h-screen bg-off-white text-teal">
+		<div className="min-h-screen">
 
 			<Home />
 

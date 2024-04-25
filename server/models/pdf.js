@@ -1,15 +1,10 @@
-const moogoose = require('mongoose');
+const moogoose = require("mongoose");
 
 const todoSchema = new moogoose.Schema({
-    pdfUrl:{
-        type: String,
-        required: true,
-    },
-
-    createdAt:{
-        type: Date,
-        default: Date.now(),
-    },
+	pdfUrl: {
+		type: String,
+		required: true,
+	},
 
     year:{
         type: String,
@@ -42,4 +37,5 @@ const todoSchema = new moogoose.Schema({
     },
 })
 
-module.exports = moogoose.model('pdf', todoSchema);
+
+module.exports = moogoose.model("pdf", todoSchema);

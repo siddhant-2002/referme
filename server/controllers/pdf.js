@@ -1,8 +1,8 @@
 const pdf = require('../models/pdf');
 
 exports.pdf = async (req, res, next) => {
-    const { pdfUrl, year, branch,semester, subject, type, subtype} = req.body;
 
+  const { pdfUrl, year, branch, semester, subject, type, subtype } = req.body;
   if (!pdfUrl) {
     res.status(400);
     return next(new Error("pdfUrl fields are required"));
@@ -10,6 +10,7 @@ exports.pdf = async (req, res, next) => {
 
   try {
     const pdfs = await pdf.create({
+
       pdfUrl,
       year,
       branch,
@@ -17,6 +18,8 @@ exports.pdf = async (req, res, next) => {
       subject,
       type,
       subtype
+
+
     });
 
     res.status(201).json({

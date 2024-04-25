@@ -2,7 +2,7 @@ import React from "react";
 
 const mission = () => {
 	return (
-		<div>
+		<div className=" text-white m-2 rounded-xl bg-gradient-to-r from-[rgb(24,25,46)] to-[rgb(49,38,123)] backdrop-blur transition-all duration-2000">
 			<div id="mission" className=" md:flex-row justify-between  ">
 				<div className="container mx-auto px-4 p-10">
 					<div className="flex flex-col md:flex-row justify-between animate-fade-in-left ">
@@ -17,7 +17,7 @@ const mission = () => {
 							<h2 className="text-4xl font-semibold mb-4 font-body">
 								Our Mission
 							</h2>
-							<p className="text-xl leading-relaxed text-teal">
+							<p className="text-xl leading-relaxed">
 								An online platform designed specifically for
 								engineering students seeking comprehensive study
 								materials, handwritten notes, and practical codes.
