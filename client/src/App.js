@@ -12,7 +12,7 @@ import Search from "./pages/Search";
 function App() {
 	return (
 		<Router>
-			<div className="App">
+			<div className="App min-h-screen bg-gradient-to-r from-[rgb(10,10,10)] to-[rgb(20,20,20)] backdrop-blur transition-all duration-2000 ">
 				<ToastContainer />
 				<Routes>
 					<Route
@@ -30,7 +30,7 @@ function App() {
 						element={
 							<>
 								<Header />
-								<Search/>
+								<Search />
 								<Footer />
 							</>
 						}
