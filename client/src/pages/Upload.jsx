@@ -138,26 +138,26 @@ const Upload = () => {
     <div>
       <div>
         <div className='flex gap-4 my-10 justify-center px-10'>
-          <select onChange={handleChange} name="year" value={year} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="year" value={notes.year} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
             <option value="" disabled hidden> Year </option>
             <option value="First Year">First Year</option>
             <option value="Second Year">Second Year</option>
             <option value="Third Year">Third Year</option>
             <option value="Forth Year">Forth Year</option>
           </select>
-          <select onChange={handleChange} name="semester" value={semester} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="semester" value={notes.semester} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
             <option value="" disabled hidden>semester</option>
             <option value="semester 1">semester 1</option>
             <option value="semester 2">semester 2</option>
 
           </select>
-          <select onChange={handleChange} name="subject" value={subject} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="subject" value={notes.subject} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
             <option value="" disabled hidden>Subjects</option>
             {filteredSubjects.map(subject => (
               <option key={subject} value={subject}>{subject}</option>
             ))}
           </select>
-          <select onChange={handleChange} name="type" value={type} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="type" value={notes.type} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
             <option value="" disabled hidden>What Do You Want...?</option>
             <option value="Notes">Notes</option>
             <option value="Practicals">Practicals</option>
@@ -167,7 +167,7 @@ const Upload = () => {
           </select>
 
           {(notes.type === "Notes" || notes.type === "PPT") && (
-            <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="Unit 1">Unit 1</option>
               <option value="Unit 2">Unit 2</option>
               <option value="Unit 3">Unit 3</option>
@@ -177,7 +177,7 @@ const Upload = () => {
             </select>
           )}
           {notes.type === "Practicals" && (
-            <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="Practical 1">Practical 1</option>
               <option value="Practical 2">Practical 2</option>
               <option value="Practical 3">Practical 3</option>
@@ -188,7 +188,7 @@ const Upload = () => {
           )}
 
           {notes.type === "PYQ'S" && (
-            <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
 
@@ -196,7 +196,7 @@ const Upload = () => {
           )}
 
           {((notes.subject === 'M 1' || notes.subject === 'M 2') && notes.type === "Tutorials") && (
-            <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+            <select onChange={handleChange} name="subtype" value={notes.subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="Tutorial 1">Tutorial 1</option>
               <option value="Tutorial 2">Tutorial 2</option>
               <option value="Tutorial 3">Tutorial 3</option>
