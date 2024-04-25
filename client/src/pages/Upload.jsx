@@ -88,8 +88,8 @@ const Upload = () => {
 
   const subjects = {
     "First Year": {
-      "semester 1": ["M 1", "BEE", "BXE"],
-      "semester 2": ["PHY", "CHEM", "EME"]
+      "semester 1": ["", "M 1", "BEE", "PHY", "SME", "PPS"],
+      "semester 2": ["", "M 2", "BXE", "CHE", "EG", "EM"]
     },
     // Add other years and semesters here
   };
@@ -162,9 +162,11 @@ const Upload = () => {
             <option value="Notes">Notes</option>
             <option value="Practicals">Practicals</option>
             <option value="PYQ'S">PYQ'S</option>
+            <option value="PPT">PPT</option>
+            <option value="Tutorials">Tutorials</option>
           </select>
 
-          {notes.type === "Notes" && (
+          {(notes.type === "Notes" || notes.type === "PPT") && (
             <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="Unit 1">Unit 1</option>
               <option value="Unit 2">Unit 2</option>
@@ -184,11 +186,27 @@ const Upload = () => {
               <option value="Practical 6">Practical 6</option>
             </select>
           )}
+
           {notes.type === "PYQ'S" && (
             <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
 
+            </select>
+          )}
+
+          {((notes.subject === 'M 1' || notes.subject === 'M 2') && notes.type === "Tutorials") && (
+            <select onChange={handleChange} name="subtype" value={subtype} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+              <option value="Tutorial 1">Tutorial 1</option>
+              <option value="Tutorial 2">Tutorial 2</option>
+              <option value="Tutorial 3">Tutorial 3</option>
+              <option value="Tutorial 4">Tutorial 4</option>
+              <option value="Tutorial 5">Tutorial 5</option>
+              <option value="Tutorial 6">Tutorial 6</option>
+              <option value="Tutorial 7">Tutorial 7</option>
+              <option value="Tutorial 8">Tutorial 8</option>
+              <option value="Tutorial 9">Tutorial 9</option>
+              <option value="Tutorial 10">Tutorial 10</option>
             </select>
           )}
 
