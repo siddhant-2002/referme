@@ -174,7 +174,7 @@ const Upload = () => {
         } else if (value === "PYQ'S") {
           setSubtypes(["2018", "2019", "2020", "2021", "2022", "2023"]);
         }
-        else if (value == "Practicals") {
+        else if (value === "Practicals") {
           setSubtypes(["Practical 1", "Practical 2", "Practical 3", "Practical 4", "Practical 5", "Practical 6"])
         }
         else {
