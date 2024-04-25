@@ -1,7 +1,7 @@
 const pdf = require('../models/pdf');
 
 exports.pdf = async (req, res, next) => {
-    const { pdfUrl, year, semester, subject, type, subtype} = req.body;
+    const { pdfUrl, year, branch,semester, subject, type, subtype} = req.body;
 
   if (!pdfUrl) {
     res.status(400);
@@ -12,6 +12,7 @@ exports.pdf = async (req, res, next) => {
     const pdfs = await pdf.create({
       pdfUrl,
       year,
+      branch,
       semester,
       subject,
       type,
@@ -23,6 +24,7 @@ exports.pdf = async (req, res, next) => {
       // pdfs,
       pdfUrl,
       year,
+      branch,
       semester,
       subject,
       type,

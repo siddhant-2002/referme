@@ -16,6 +16,11 @@ const todoSchema = new moogoose.Schema({
         required: true,
     },
 
+    branch:{  
+        type: String,
+        required: true,
+    },
+    
     semester:{
         type: String,
         required: true,
