@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Body from "./components/Body";
-import {ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Form from "./pages/Form";
 import Upload from "./pages/Upload";
 import Search from "./pages/Search";
-
+import Loader from "./components/Loader";
 function App() {
+	const [isLoading, setIsLoading] = useState(true);
+
+	// Simulate a data fetch with a timeout
+	useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 2000); // 3 seconds delay
+	}, []);
+
+	if (isLoading) {
+		return <Loader />; // Show Loader while data is loading
+	}
+
 	return (
 		<Router>
 			<div className="App min-h-screen bg-gradient-to-r from-[rgb(10,10,10)] to-[rgb(20,20,20)] backdrop-blur transition-all duration-2000 ">
 				<ToastContainer />
+
 				<Routes>
 					<Route
 						path="/"
