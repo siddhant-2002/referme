@@ -27,7 +27,7 @@ const Home = () => {
   };
 
   return (
-    <div className="m-10 rounded-xl bg-transparent border border-purple-400 hover:border-purple-500  hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
+    <div className="m-10 rounded-xl bg-whitish-blur backdrop-blur  hover:border border-purple-400 hover:bg-transparent  hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
       <div className="container mx-auto px-4 p-20">
         <div className="flex flex-col md:flex-row justify-between py-8">
           <div className="w-full md:w-1/2 flex flex-col items-center justify-center animate-fade-in-left">

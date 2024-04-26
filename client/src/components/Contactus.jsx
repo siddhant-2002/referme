@@ -25,7 +25,7 @@ const Contactus = () => {
 
 
 	return (
-		<div className=" m-10 text-white rounded-xl bg-transparent border border-purple-400 hover:border-purple-500  hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
+		<div className=" m-10 text-white rounded-xl bg-whitish-blur backdrop-blur  hover:border border-purple-400 hover:bg-transparent   hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
 			<div id="contactus" className=" md:flex-row justify-between  ">
 				<div className="min-h-screen">
 					<div className="container mx-auto px-4 ">
