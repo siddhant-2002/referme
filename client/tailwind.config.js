@@ -13,6 +13,7 @@ module.exports = {
         'teal': '#135D66',
         'light-teal': '#77B0AA',
         'off-white': '#E3FEF7',
+        'option':'#100F3A'
       },
       animation: {
         'fade-in-left': 'fadeInLeft 2s ease-in-out',

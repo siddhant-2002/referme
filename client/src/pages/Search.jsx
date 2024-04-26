@@ -118,42 +118,42 @@ function Search() {
     return (
         <div>
             <div className=''>
-                <div className='flex gap-4 my-10 justify-center px-10 w-full'>
-                    <select onChange={handleChange} name="year" value={year} className='w-60 text-white border border-purple-500   bg-transparent  rounded-md appearance-none text-center'>
+                <div className='flex flex-col sm:flex-row sm:align-center gap-4 my-10 justify-center px-10 w-full'>
+                    <select onChange={handleChange} name="year" value={year} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden> Year </option>
-                        <option className='bg-transparent' value="First Year">First Year</option>
-                        <option className='bg-transparent' value="Second Year">Second Year</option>
-                        <option className='bg-transparent' value="Third Year">Third Year</option>
-                        <option className='bg-transparent' value="htmlForth Year">Forth Year</option>
+                        <option className='bg-option text-white' value="First Year">First Year</option>
+                        <option className='bg-option text-white' value="Second Year">Second Year</option>
+                        <option className='bg-option text-white' value="Third Year">Third Year</option>
+                        <option className='bg-option text-white' value="htmlForth Year">Forth Year</option>
                     </select>
 
-                    <select onChange={handleChange} name="branch" value={branch} className='w-60 text-white border border-purple-500  bg-transparent  rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="branch" value={branch} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Branch</option>
                         {branches.map(branch => (
-                            <option key={branch} value={branch}>{branch}</option>
+                            <option className='bg-option text-white' key={branch} value={branch}>{branch}</option>
                         ))}
                         {/* Add more branches as needed... */}
                     </select>
 
-                    <select onChange={handleChange} name="semester" value={semester} className='w-60 text-white border border-purple-500  bg-transparent  rounded-md appearance-none text-center'>
-                        <option value="" disabled hidden>semester</option>
-                        <option value="semester 1">semester 1</option>
-                        <option value="semester 2">semester 2</option>
+                    <select onChange={handleChange} name="semester" value={semester} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                        <option className='bg-option text-white'  value="" disabled hidden>semester</option>
+                        <option className='bg-option text-white' value="semester 1">semester 1</option>
+                        <option className='bg-option text-white' value="semester 2">semester 2</option>
 
                     </select>
-                    <select onChange={handleChange} name="subject" value={subject} className='w-60 text-white border border-purple-500  bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="subject" value={subject} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Subjects</option>
                         {filteredSubjects.map(subject => (
-                            <option key={subject} value={subject}>{subject}</option>
+                            <option className='bg-option text-white' key={subject} value={subject}>{subject}</option>
                         ))}
                     </select>
-                    <select onChange={handleChange} name="type" value={type} className='w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
-                        <option value="" disabled hidden>What Do You Want...?</option>
-                        <option value="Notes">Notes</option>
-                        <option value="Practicals">Practicals</option>
-                        <option value="PYQ'S">PYQ'S</option>
-                        <option value="PPT">PPT</option>
-                        <option value="Tutorials">Tutorials</option>
+                    <select onChange={handleChange} name="type" value={type} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                        <option className='bg-option text-white' value="" disabled hidden>What Do You Want...?</option>
+                        <option className='bg-option text-white' value="Notes">Notes</option>
+                        <option className='bg-option text-white' value="Practicals">Practicals</option>
+                        <option className='bg-option text-white' value="PYQ'S">PYQ'S</option>
+                        <option className='bg-option text-white' value="PPT">PPT</option>
+                        <option className='bg-option text-white' value="Tutorials">Tutorials</option>
                     </select>
 
                     <button onClick={handleSearch} className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
