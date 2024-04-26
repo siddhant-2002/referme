@@ -37,8 +37,8 @@ const Contactus = () => {
 									className="w-full  h-auto"
 								/>
 							</div>
-							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-24">
-								<h2 className="text-4xl  mb-4">
+							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-24 ">
+								<h2 className="text-4xl  mb-4 ">
 									Contact Us
 								</h2>
 								<form ref={form} onSubmit={sendEmail} className=" w-full flex flex-col">
@@ -52,9 +52,10 @@ const Contactus = () => {
 										type="text"
 										id="name"
 										name="user_name"
-										className=" w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
+										className=" w-full  bg-transparent focus:bg-transparent  rounded-md py-2 px-3 mb-4 border-b border-white-500"
 										placeholder="Enter your name"
 									/>
+							
 
 									<label
 										htmlFor="email"
@@ -66,7 +67,7 @@ const Contactus = () => {
 										type="email"
 										id="email"
 										name="user_email"
-										className="w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
+										className="w-full  bg-transparent focus:bg-transparent border-b border-white-500 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your email"
 									/>
 
@@ -79,7 +80,7 @@ const Contactus = () => {
 									<textarea
 										id="message"
 										name="message"
-										className="w-full border bg-transparent border-gray-300 rounded-md py-2 px-3 mb-4"
+										className="w-full  bg-transparent focus:bg-transparent border-b border-white-500 rounded-md py-2 px-3 mb-4"
 										placeholder="Enter your message"
 										rows="4"
 									></textarea>

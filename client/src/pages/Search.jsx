@@ -118,15 +118,15 @@ function Search() {
         <div>
             <div className=''>
                 <div className='flex gap-4 my-10 justify-center px-10 w-full'>
-                    <select onChange={handleChange} name="year" value={year} className='w-64 py-3 pl-4 bg-transparant font-semibold rounded-md'>
+                    <select onChange={handleChange} name="year" value={year} className='w-60 text-white   bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden> Year </option>
-                        <option value="First Year">First Year</option>
-                        <option value="Second Year">Second Year</option>
-                        <option value="Third Year">Third Year</option>
-                        <option value="Forth Year">Forth Year</option>
+                        <option className='bg-transparent' value="First Year">First Year</option>
+                        <option className='bg-transparent' value="Second Year">Second Year</option>
+                        <option className='bg-transparent' value="Third Year">Third Year</option>
+                        <option className='bg-transparent' value="Forth Year">Forth Year</option>
                     </select>
 
-                    <select onChange={handleChange} name="branch" value={branch} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+                    <select onChange={handleChange} name="branch" value={branch} className='w-60 text-white  bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Branch</option>
                         {branches.map(branch => (
                             <option key={branch} value={branch}>{branch}</option>
@@ -134,19 +134,19 @@ function Search() {
                         {/* Add more branches as needed... */}
                     </select>
 
-                    <select onChange={handleChange} name="semester" value={semester} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+                    <select onChange={handleChange} name="semester" value={semester} className='w-60 text-white  bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>semester</option>
                         <option value="semester 1">semester 1</option>
                         <option value="semester 2">semester 2</option>
 
                     </select>
-                    <select onChange={handleChange} name="subject" value={subject} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+                    <select onChange={handleChange} name="subject" value={subject} className='w-60 text-white  bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Subjects</option>
                         {filteredSubjects.map(subject => (
                             <option key={subject} value={subject}>{subject}</option>
                         ))}
                     </select>
-                    <select onChange={handleChange} name="type" value={type} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+                    <select onChange={handleChange} name="type" value={type} className='w-60 text-white bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>What Do You Want...?</option>
                         <option value="Notes">Notes</option>
                         <option value="Practicals">Practicals</option>

@@ -48,7 +48,7 @@ const Aboutus = () => {
 			<div id="about-us" className=" md:flex-row justify-between  ">
 				<div className=" flex flex-col items-center justify-center md:p-28 rounded-xl m-2 text-white  backdrop-blur transition-all duration-2000">
 					<h2 className="text-4xl  mb-4 font-body">
-						<div className="wave">
+						<div className="wave border-b border-white-500 py-5">
 							<span style={{ '--i': 1 }}>A</span>
 							<span style={{ '--i': 2 }}>b</span>
 							<span style={{ '--i': 3 }}>o</span>

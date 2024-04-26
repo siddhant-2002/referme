@@ -50,8 +50,8 @@ const Features = () => {
 			<div className="rounded-xl m-2 flex flex-col items-center justify-center  text-white  backdrop-blur transition-all duration-2000">
 				<div id="features" className=" md:flex-row justify-between  ">
 					<div className="p-6">
-						<h2 className="text-4xl mb-4 font-body flex justify-center items-center">
-							<div className="wave justify-center items-center">
+						<h2 className="text-4xl mb-4 font-body flex justify-center items-center ">
+							<div className="wave justify-center items-center border-b border-white-500 py-5">
 								<span style={{ '--i': 1 }}>F </span>
 								<span style={{ '--i': 2 }}>e </span>
 								<span style={{ '--i': 3 }}>a </span>

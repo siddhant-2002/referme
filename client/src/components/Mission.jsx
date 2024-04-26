@@ -56,7 +56,7 @@ const mission = () => {
 								/>
 							</div>
 							<div className="w-full md:w-1/2 flex flex-col items-center justify-center animate-fade-in-right">
-								<h2 className="text-4xl mb-4  font-body">
+								<h2 className="text-4xl mb-4  font-body border-b border-white-500 py-5">
 									<div className="wave">
 										<span style={{ '--i': 1 }}>O </span>
 										<span style={{ '--i': 2 }}>u </span>

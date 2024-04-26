@@ -36,7 +36,7 @@ const Header = () => {
                     </ul> */}
           <ul className="flex flex-col sm:flex-row gap-8 justify-between">
             <li>
-              <a href="/" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white hover:bg-transparent text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+              <a href="/" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white hover: text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
                 Home
               </a>
             </li>
