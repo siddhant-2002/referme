@@ -168,7 +168,7 @@ function Search() {
                     </div>
                 ))}
                 </div>
-              
+                <img src="what.png" className=''/>
             </div>
         </div>
     )
