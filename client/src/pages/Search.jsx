@@ -124,7 +124,7 @@ function Search() {
                         <option className='bg-transparent' value="First Year">First Year</option>
                         <option className='bg-transparent' value="Second Year">Second Year</option>
                         <option className='bg-transparent' value="Third Year">Third Year</option>
-                        <option className='bg-transparent' value="htmlForth Year">htmlForth Year</option>
+                        <option className='bg-transparent' value="htmlForth Year">Forth Year</option>
                     </select>
 
                     <select onChange={handleChange} name="branch" value={branch} className='w-60 text-white border border-purple-500  bg-transparent  rounded-md appearance-none text-center'>
