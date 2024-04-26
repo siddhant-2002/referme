@@ -20,8 +20,8 @@ const Form = () => {
       .catch(err => console.log(err));
   }
   return (
-    <div id='form' className="min-h-screen flex items-center justify-center bg-off-white text-teal py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div id='form'className=' bg-linear-gradient backdrop-blur transition-all duration-2000' >
+      <div className="   rounded-xl bg-whitish-blur backdrop-blur  ">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-teal">
             Admin Login

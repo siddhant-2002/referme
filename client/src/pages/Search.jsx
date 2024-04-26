@@ -55,7 +55,10 @@ const subjects = {
 
 
 function Search() {
-    const [imageSrc, setImageSrc] = useState('what.png');
+    // const [imageSrc, setImageSrc] = useState({
+    //     hereimg: 'here.png',
+    //     whatimg: 'what.png'
+    // });
 
     const [year, setYear] = useState("");
     const [semester, setSemester] = useState("");
@@ -112,7 +115,7 @@ function Search() {
                 },
             });
             setData(response.data);
-            setImageSrc('here.png');
+            // setImageSrc('here.png');
         } catch (error) {
             console.log(error);
         }
@@ -163,6 +166,19 @@ function Search() {
                     <button onClick={handleSearch} className='w-64 bg-blue-500 text-white font-bold py-3 rounded-md'>Search</button>
 
                 </div>
+
+                <div className='bg-whitish-blur backdrop-blur flex justify-between h-1/4 m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transhtmlForm transition-all duration-200'>
+                    <div className='ml-[20%]'>
+                        <img src="what.png" alt='' className='w-full sm:w-64 md:w-48 lg:w-40 xl:w-60' />
+                    </div>
+
+                    <div >
+                        {/* <img src={imageSrc.hereimg}  alt="" className='w-full sm:w-64 md:w-48 lg:w-40 xl:w-60' /> */}
+                        <Slider/>
+                    </div>
+
+                </div>
+                
                 <div className='flex text-white'>
                     {data.map((item, index) => (
                         <div key={index} className="card mx-auto my-4 p-4  shadow-lg w-1/2 border border-gray-300">
@@ -174,16 +190,7 @@ function Search() {
                     ))}
                 </div>
 
-                <div className='bg-whitish-blur backdrop-blur flex justify-between items-center h-1/4 m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transhtmlForm transition-all duration-200'>
-                    <div >
-                        <img src={imageSrc} alt='' className='w-full sm:w-64 md:w-48 lg:w-40 xl:w-60' />
-                    </div>
-
-                    <div >
-                        <Slider/>
-                    </div>
-
-                </div>
+                
 
             </div>
         </div>
