@@ -34,7 +34,7 @@ const subjects = {
         },
     },
 
-    "Forth Year": {
+    "htmlForth Year": {
         "computer": {
             "semester 1": ["", "HPC", "AI&R", "DA", "DS"],
             "semester 2": ["", "ML", "I&CS", "Compilers", "CC"]
@@ -53,6 +53,7 @@ const subjects = {
 
 
 function Search() {
+
     const [year, setYear] = useState("");
     const [semester, setSemester] = useState("");
     const [type, setType] = useState("");
@@ -118,15 +119,15 @@ function Search() {
         <div>
             <div className=''>
                 <div className='flex gap-4 my-10 justify-center px-10 w-full'>
-                    <select onChange={handleChange} name="year" value={year} className='w-60 text-white   bg-transparent  rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="year" value={year} className='w-60 text-white border border-purple-500   bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden> Year </option>
                         <option className='bg-transparent' value="First Year">First Year</option>
                         <option className='bg-transparent' value="Second Year">Second Year</option>
                         <option className='bg-transparent' value="Third Year">Third Year</option>
-                        <option className='bg-transparent' value="Forth Year">Forth Year</option>
+                        <option className='bg-transparent' value="htmlForth Year">htmlForth Year</option>
                     </select>
 
-                    <select onChange={handleChange} name="branch" value={branch} className='w-60 text-white  bg-transparent  rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="branch" value={branch} className='w-60 text-white border border-purple-500  bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Branch</option>
                         {branches.map(branch => (
                             <option key={branch} value={branch}>{branch}</option>
@@ -134,19 +135,19 @@ function Search() {
                         {/* Add more branches as needed... */}
                     </select>
 
-                    <select onChange={handleChange} name="semester" value={semester} className='w-60 text-white  bg-transparent  rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="semester" value={semester} className='w-60 text-white border border-purple-500  bg-transparent  rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>semester</option>
                         <option value="semester 1">semester 1</option>
                         <option value="semester 2">semester 2</option>
 
                     </select>
-                    <select onChange={handleChange} name="subject" value={subject} className='w-60 text-white  bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="subject" value={subject} className='w-60 text-white border border-purple-500  bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>Subjects</option>
                         {filteredSubjects.map(subject => (
                             <option key={subject} value={subject}>{subject}</option>
                         ))}
                     </select>
-                    <select onChange={handleChange} name="type" value={type} className='w-60 text-white bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="type" value={type} className='w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
                         <option value="" disabled hidden>What Do You Want...?</option>
                         <option value="Notes">Notes</option>
                         <option value="Practicals">Practicals</option>
@@ -159,19 +160,25 @@ function Search() {
 
                 </div>
                 <div className='flex text-white'>
-                {data.map((item, index) => (
-                    <div key={index} className="card mx-auto my-4 p-4  shadow-lg w-1/2 border border-gray-300">
-                        <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
-                        <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Open PDF
-                        </a>
+                    {data.map((item, index) => (
+                        <div key={index} className="card mx-auto my-4 p-4  shadow-lg w-1/2 border border-gray-300">
+                            <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
+                            <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Open PDF
+                            </a>
+                        </div>
+                    ))}
+                </div>
+                <div className='bg-whitish-blur backdrop-blur flex justify-center items-center h-1/4  m-10 rounded-xl   hover:border border-purple-400 hover:bg-transparent  hover:shadow-lg hover:scale-105 hover:shadow-glow transhtmlForm transition-all duration-200'>
+                    <div>
+                        <img src="what.png" alt='' className='w-full sm:w-64 md:w-48 lg:w-60 xl:w-60' />
                     </div>
-                ))}
+                    <div>
+                        {/* <Slideshow /> */}
+                    </div>
+
                 </div>
-                <div className='bg-whitish-blur backdrop-blur flex justify-center items-center h-screen'>
-                    <img src="what.png" className=''/>
-                </div>
-                
+
             </div>
         </div>
     )

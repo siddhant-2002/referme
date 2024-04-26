@@ -6,24 +6,24 @@ const Home = () => {
   const navigate = useNavigate();
 
   const AnimatedText = () => {
-	const [text, setText] = useState('');
-	const fullText = 'Reefer ME...!';
-  
-	useEffect(() => {
-	  let index = 0;
-	  const interval = setInterval(() => {
-		setText((prevText) => prevText + fullText[index]);
-		if (index < fullText.length - 1) {
-		  index++;
-		} else {
-		  clearInterval(interval);
-		}
-	  }, 400); // Change this value to adjust the speed of the animation
-  
-	  return () => clearInterval(interval);
-	}, []);
-  
-	return <span className="text-white">{text}</span>;
+    const [text, setText] = useState('');
+    const fullText = 'Reefer ME...!';
+
+    useEffect(() => {
+      let index = 0;
+      const interval = setInterval(() => {
+        setText((prevText) => prevText + fullText[index]);
+        if (index < fullText.length - 1) {
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 400); // Change this value to adjust the speed of the animation
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return <span className="text-white">{text}</span>;
   };
 
   return (
@@ -41,7 +41,7 @@ const Home = () => {
               and Practical Codes.
             </p>
             <div onClick={() => navigate('/Search')}>
-              <Button  />
+              <Button />
             </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-center animate-fade-in-right">
