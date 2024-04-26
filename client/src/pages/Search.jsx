@@ -168,7 +168,10 @@ function Search() {
                     </div>
                 ))}
                 </div>
-                <img src="what.png" className=''/>
+                <div className='bg-whitish-blur backdrop-blur flex justify-center items-center h-screen'>
+                    <img src="what.png" className=''/>
+                </div>
+                
             </div>
         </div>
     )
