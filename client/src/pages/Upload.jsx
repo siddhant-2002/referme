@@ -183,8 +183,8 @@ const Upload = () => {
   return (
     <div>
       <div>
-        <div className='flex gap-4 my-10 justify-center px-10 text-white'>
-          <select onChange={handleChange} name="year" value={notes.year} className='w-60 p-3 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+        <div className='flex flex-col sm:flex-row sm:items-center gap-4 my-10 justify-center px-10 w-full mx-auto'>
+          <select onChange={handleChange} name="year" value={notes.year} className='w-full  p-3 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden> Year </option>
             <option className='bg-option text-white'  value="First Year">First Year</option>
             <option className='bg-option text-white' value="Second Year">Second Year</option>
@@ -192,7 +192,7 @@ const Upload = () => {
             <option className='bg-option text-white' value="Forth Year">Forth Year</option>
           </select>
 
-          <select onChange={handleChange} name="branch" value={notes.branch} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+          <select onChange={handleChange} name="branch" value={notes.branch} className='w-full sm:w-60 p-3 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>Branch</option>
             {branches.map(branch => (
               <option className='bg-option text-white' key={branch} value={branch}>{branch}</option>
@@ -200,19 +200,19 @@ const Upload = () => {
             {/* Add more branches as needed... */}
           </select>
 
-          <select onChange={handleChange} name="semester" value={notes.semester} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+          <select onChange={handleChange} name="semester" value={notes.semester} className='w-full sm:w-60 p-3 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>semester</option>
             <option className='bg-option text-white' value="semester 1">semester 1</option>
             <option className='bg-option text-white' value="semester 2">semester 2</option>
 
           </select>
-          <select onChange={handleChange} name="subject" value={notes.subject} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+          <select onChange={handleChange} name="subject" value={notes.subject} className='w-full sm:w-60 p-3 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>Subjects</option>
             {filteredSubjects.map(subject => (
               <option className='bg-option text-white' key={subject} value={subject}>{subject}</option>
             ))}
           </select>
-          <select onChange={handleChange} name="type" value={notes.type} className='w-60  sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+          <select onChange={handleChange} name="type" value={notes.type} className='w-full sm:w-60 p-3 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option className='bg-option text-white'  value="" disabled hidden>What Do You Want...?</option>
             <option className='bg-option text-white' value="Notes">Notes</option>
             <option className='bg-option text-white' value="Practicals">Practicals</option>
@@ -226,7 +226,7 @@ const Upload = () => {
             name="subtype"
             value={notes.subtype}
             onChange={handleChange}
-            className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'
+            className='w-full sm:w-60 p-3 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'
             placeholder="Enter subtype"
           />
 
@@ -245,7 +245,7 @@ const Upload = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             />
           </div>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+          <button type="submit" className=" w-full sm:w-60 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
             Upload
           </button>
         </form>

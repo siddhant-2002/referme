@@ -1,12 +1,12 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import Hamburger from './Hamburger';
 
 
 const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 
   React.useEffect(() => {
@@ -89,7 +89,7 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/Form" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
-                  Admin Login
+                   Login
                 </Link>
               </li>
             </ul>
