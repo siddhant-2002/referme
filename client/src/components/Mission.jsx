@@ -50,7 +50,7 @@ const mission = () => {
 						<div className="flex flex-col md:flex-row justify-between animate-fade-in-left ">
 							<div className="w-full md:w-1/2 flex justify-center items-center">
 								<img
-									src="mission.png"
+									src="mission3.png"
 									alt="Mission"
 									className="w-3/4 h-auto mr-4"
 								/>
