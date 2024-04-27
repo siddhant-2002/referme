@@ -3,6 +3,12 @@ import React from 'react';
 const Features = () => {
 	const cards = ['Notes', 'Practicals', 'Projects', 'Question Paper'];
 	const images = ['notes1.jpg', 'practical1.jpg', 'project2.jpg', 'pyq.jpg'];
+	const desc = [
+        "Get concise notes for any topic, quick review or in-depth study.",
+        "Apply theory through real-world experiments, and case studies.",
+        "Take on transformative projects from idea to reality, challenging norms.",
+		"Access a wide range of past exam papers across subjects."
+	    ];
 
 	return (
 		<div>
@@ -72,7 +78,7 @@ const Features = () => {
 										className="w-3/4 h-auto my-4 rounded-3xl"
 										alt={card}
 									/>
-									<p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+									<p className="text-center">{desc[index]}</p>
 								</div>
 							))}
 						</div>
