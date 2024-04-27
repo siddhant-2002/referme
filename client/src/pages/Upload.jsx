@@ -183,8 +183,8 @@ const Upload = () => {
   return (
     <div>
       <div>
-        <div className='flex gap-4 my-10 justify-center px-10'>
-          <select onChange={handleChange} name="year" value={notes.year} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+        <div className='flex gap-4 my-10 justify-center px-10 text-white'>
+          <select onChange={handleChange} name="year" value={notes.year} className='w-60 p-3 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden> Year </option>
             <option className='bg-option text-white'  value="First Year">First Year</option>
             <option className='bg-option text-white' value="Second Year">Second Year</option>
