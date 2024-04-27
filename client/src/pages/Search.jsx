@@ -167,15 +167,15 @@ function Search() {
 
                 </div>
 
-                <div className='bg-whitish-blur backdrop-blur flex flex-col md:flex-row  h-full  m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transition-all duration-200'>
-                    {/* <div className='w-60'>
-                        <img src="what.png" alt='' className='' />
-                    </div>
+                <div className='bg-whitish-blur backdrop-blur flex justify-center space-x-10 md:flex-row h-full m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transition-all duration-200'>
+  <div className='w-60'>
+    <img src="what.png" alt='' className='' />
+  </div>
 
-                    <div className='w-60'>
-                        <Slider />
-                    </div> */}
-                </div>
+  <div className='w-60'>
+    <Slider />
+  </div>
+</div>
 
                 <div className=' text-white flex flex-wrap justify-center items-center gap-4 p-2 sm:p-5 md:p-10'>
                     {data.map((item, index) => (
