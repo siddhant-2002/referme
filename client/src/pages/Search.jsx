@@ -177,16 +177,15 @@ function Search() {
                     </div> */}
                 </div>
 
-                <div className=' text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-5 py-10'>
+                <div className=' text-white flex flex-wrap justify-center items-center gap-4 p-2 sm:p-5 md:p-10'>
                     {data.map((item, index) => (
-                        <div key={index} className="hover:border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105   bg-whitish-blur backdrop-blur  duration-2000 ">
-                            <img src="notes.png" className=' w-16' alt="" />
-                            <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
-                            
-                            <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Open PDF
-                            </a>
-                        </div>
+                     <div key={index} className="hover:border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105 bg-whitish-blur backdrop-blur duration-2000 p-2 sm:p-5 md:p-10">
+                     <img src="notes.png" className='w-12 sm:w-16 md:w-32 mb-2 sm:mb-4' alt="" />
+                     <h2 className="text-center text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">{item.subtype}</h2>
+                     <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 md:py-3 md:px-6">
+                         Open PDF
+                     </a>
+                 </div>
                     ))}
                 </div>
 
