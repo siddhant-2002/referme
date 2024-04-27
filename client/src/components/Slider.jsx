@@ -11,17 +11,19 @@ body{
     background-color: #7aacff;
 }
 .container{
-    width: 38vmin;
-    position: absolute;
+    // width: 38vmin;
+    position: flex
+    // justify-content: center;
+    // align-items: center;
     transform: translate(-50%,-50%);
-    top: 50%;
-    left: 60%;
+    // top: 50%;
+    // left: 60%;
     overflow: hidden;
     border-radius: 8px;
     // box-shadow: 10px 25px 30px rgba(30,30,200,0.3);
 }
 .wrapper{
-    width: 100%;
+    // width: 100%;
     display: flex;
     animation: slide 16s infinite;
 }
