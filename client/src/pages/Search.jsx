@@ -59,7 +59,7 @@ function Search() {
     //     hereimg: 'here.png',
     //     whatimg: 'what.png'
     // });
-
+    const displayRef = React.useRef(null);
     const [year, setYear] = useState("");
     const [semester, setSemester] = useState("");
     const [type, setType] = useState("");
@@ -104,7 +104,7 @@ function Search() {
 
     const handleSearch = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/pdfs`, {
+            const response = await axios.get(`https://referme.onrender.com/api/pdfs`, {
                 params: {
                     year: notes.year,
                     branch: notes.branch,
@@ -115,10 +115,12 @@ function Search() {
                 },
             });
             setData(response.data);
+            displayRef.current.scrollIntoView({ behavior: 'smooth' });
             // setImageSrc('here.png');
         } catch (error) {
             console.log(error);
         }
+
     };
     const filteredSubjects = year && branch && semester ? subjects[year][branch][semester] : [];
 
@@ -177,7 +179,7 @@ function Search() {
                     </div>
                 </div>
 
-                <div className=' text-white flex flex-wrap justify-center items-center gap-4 p-2 sm:p-5 md:p-10'>
+                <div ref={displayRef}  className=' text-white flex flex-wrap justify-center items-center gap-4 p-2 sm:p-5 md:p-10'>
                     {data.map((item, index) => (
                         <div key={index} className="hover:border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105 bg-whitish-blur backdrop-blur duration-2000 p-2 sm:p-5 md:p-10">
                             

@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Body from "./components/Body";
-import { ToastContainer } from "react-toastify";
+
 import Form from "./pages/Form";
 import Upload from "./pages/Upload";
 import Search from "./pages/Search";
@@ -26,7 +26,7 @@ function App() {
 	return (
 		<Router>
 			<div className="App min-h-screen bg-linear-gradient backdrop-blur transition-all duration-2000 ">
-				<ToastContainer />
+				
 
 				<Routes>
 					<Route

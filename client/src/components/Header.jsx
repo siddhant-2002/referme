@@ -2,7 +2,24 @@ import React from "react";
 // import { useNavigate } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import Hamburger from './Hamburger';
+import styled from 'styled-components';
 
+const Navigation = styled.nav`
+  display: flex;
+
+  @media (max-width: 1117px) {
+    display: none;
+  }
+`;
+
+const HamburgerMenu = styled.div`
+  display: none;
+
+  @media (max-width: 1117px) {
+    display: flex;
+  }
+
+`;
 
 const Header = () => {
   const location = useLocation();
@@ -23,45 +40,22 @@ const Header = () => {
   return (
     <>
 
-      <div>
-        <style>
-          {`
-        @media (max-width: 768px) {
-          .navigation {
-            display: none;
-          }
-        
-          .hamburger {
-            display: flex;
-          }
-        }
-        @media(min-width:7768px){
-          .navigation {
-            display: flex;
-          }
-        
-          .hamburger {
-            display: none;
-          }
-        }
-        `}
-        </style>
-      </div>
+
 
       <header className="w-full z-10 flex items-center justify-between px-20 py-4  bg-transparant">
         <div className="flex items-center justify-between w-full">
 
           <a href="/"><img src="logo-2.png" className="w-25 h-10" alt="logo" /></a>
-          
 
-          <div className="hamburger lg:hidden">
+
+          <HamburgerMenu >
             <Hamburger />
-          </div>
+          </HamburgerMenu>
 
 
-          <nav className=" navigation flex flex-col sm:flex-row sm:justify-between">
+          <Navigation >
 
-            <ul className="flex flex-col sm:flex-row gap-8 justify-between">
+            <ul className=" ul flex  flex-col sm:flex-row gap-8 justify-between">
               <li>
                 <a href="/" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white  bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
                   Home
@@ -89,15 +83,21 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/Form" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
-                   Login
+                  Login
                 </Link>
               </li>
             </ul>
-          </nav>
+          </Navigation>
         </div>
       </header>
+      {/* className="hamburger lg:hidden" */}
+      {/* className=" navigation flex flex-col sm:flex-row sm:justify-between" */}
     </>
   );
 };
 
 export default Header;
+
+
+
+

@@ -9,7 +9,7 @@ const Form = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5000/Form', { email, password })
+    axios.post('https://referme.onrender.com/Form', { email, password })
       .then(result => {
 
         if (result.data === "true") {

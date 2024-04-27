@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 const Contactus = () => {
 	const form = useRef();
@@ -21,13 +22,15 @@ const Contactus = () => {
 				console.log('FAILED...', error.text);
 			},
 		  );
+		  e.target.reset();
 	  };
 
 
 	return (
 		<div className="m-10 text-white rounded-xl bg-whitish-blur backdrop-blur  hover:border border-purple-400 hover:bg-transparent   hover:shadow-lg hover:scale-105 hover:shadow-glow transform transition-all duration-200">
+			<ToastContainer style={{ position: "float" }}  />
 			<div id="contactus" className=" md:flex-row justify-between  ">
-				<div className="min-h-screen">
+				<div className="">
 					<div className="container mx-auto px-4 ">
 						<div className="flex flex-col md:flex-row justify-between py-8">
 							<div className="w-full md:w-1/2 flex justify-center items-center p-2">
