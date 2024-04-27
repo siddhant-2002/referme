@@ -51,7 +51,8 @@ const Header = () => {
       <header className="w-full z-10 flex items-center justify-between px-20 py-4  bg-transparant">
         <div className="flex items-center justify-between w-full">
 
-          <img onClick={() => navigate('/Form')} src="logo-2.png" className="w-25 h-10" alt="logo" />
+          <a href="/"><img src="logo-2.png" className="w-25 h-10" alt="logo" /></a>
+          
 
           <div className="hamburger lg:hidden">
             <Hamburger />
@@ -84,6 +85,11 @@ const Header = () => {
               <li>
                 <Link to="/#contactus" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white bg-transparent hover:border  hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/Form" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
+                  Admin Login
                 </Link>
               </li>
             </ul>
