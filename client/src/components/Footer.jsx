@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <section className="py-10 text-white sm:pt-16 lg:pt-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-                <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
+                {/* <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
                     <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                         <img className="w-auto h-9" src="logo2.png" alt="" />
 
@@ -111,7 +111,7 @@ const Footer = () => {
                             <button type="submit" className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 ">Subscribe</button>
                         </form>
                     </div>
-                </div>
+                </div> */}
 
                 <hr className="mt-16 mb-10 border-gray-200" />
 
