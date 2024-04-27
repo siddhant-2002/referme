@@ -236,7 +236,7 @@ const Upload = () => {
         <form onSubmit={handleSubmit} className="w-1/2 bg-linear-gradient backdrop-blur transition-all duration-2000  rounded-lg shadow-2xl p-6 m-4">
           <div className="mb-4">
             <label htmlFor="pdf" className="block text-white text-2xl font-bold mb-2 ">Pdf:</label>
-            {pdfPerc > 0 && <p className="text-white-700 text-sm mb-2">Uploading: {pdfPerc}%</p>}
+            {pdfPerc > 0 && <p className="text-white text-sm mb-2">Uploading: {pdfPerc}%</p>}
             <input
               type="file"
               accept="Pdf/*"
