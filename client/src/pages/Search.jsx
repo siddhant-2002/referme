@@ -182,7 +182,7 @@ function Search() {
                         <div key={index} className="hover:border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105 bg-whitish-blur backdrop-blur duration-2000 p-2 sm:p-5 md:p-10">
                             
                             <h2 className="text-center text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">{item.subtype}</h2>
-                            <img src={item.type === 'Notes' ? 'notes.png' : item.type === 'Practicals' ? 'practicals.png' : item.type === "PYQ'S" ? 'pyqs.png' : item.type === "Tutorials" ? 'tutorials.png' : item.type == 'default.png'} alt={item.type} className='w-12 sm:w-16 md:w-32 mb-2 sm:mb-4' />
+                            <img src={item.type === 'Notes' ? 'notes.png' : item.type === 'Practicals' ? 'practicals.png' : item.type === "PYQ'S" ? 'pyqs.png' : item.type === "Tutorials" ? 'tutorials.png' : item.type === 'default.png'} alt={item.type} className='w-12 sm:w-16 md:w-32 mb-2 sm:mb-4' />
                             <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 md:py-3 md:px-6">
                                 Open PDF
                             </a>
