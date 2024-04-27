@@ -7,6 +7,7 @@ const Hamburger = () => {
 
     const openNav = () => {
         setIsOpen(true);
+
     };
 
     const closeNav = () => {
@@ -83,7 +84,7 @@ const Hamburger = () => {
             <div className='text-white'>
                 <div id="mySidepanel" className={`fixed top-0 left-0  bg-darkish-blur transform transition-transform ease-in-out duration-200 ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-64 px-8 py-4 z-50`}>
                     <span href="#" className="absolute top-0 right-0 mt-4 mr-4 text-gray-200 cursor-pointer" onClick={closeNav}>×</span>
-                    <ul className="flex navbar flex-col sm:flex-row gap-8 justify-between">
+                    <ul className="flex navbar flex-col sm:flex-row gap-8 justify-between" style={{ display: isOpen ? 'flex' : 'none' }}>
                         <li>
                             <a href="/" className="text-lg hover:text-purple-500 hover:scale-105 text-off-white  bg-transparent hover:border hover:border-purple-500 px-5 py-3 rounded-full transition-all duration-200">
                                 Home
