@@ -7,7 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
 app.post("/Form", async (req, res) => {
 	const {email, password} = req.body;
 	const user = await Admin.findOne({email: email}).then((user) => {
@@ -24,7 +23,8 @@ app.post("/Form", async (req, res) => {
 	});
 });
 
-require('dotenv').config();
+
+require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 connectDB();
@@ -32,6 +32,5 @@ app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 });
 
-
-const pdfRoutes = require('./routes/pdf');
+const pdfRoutes = require("./routes/pdf");
 app.use("/api/pdfs", pdfRoutes);
