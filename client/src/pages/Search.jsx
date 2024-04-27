@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Slider from '../pages/Slider';
+import Slider from '../components/Slider';
 
 
 
@@ -125,8 +125,8 @@ function Search() {
     return (
         <div>
             <div className=''>
-                <div className='flex flex-col sm:flex-row sm:align-center gap-4 my-10 justify-center px-10 w-full'>
-                    <select onChange={handleChange} name="year" value={year} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                <div className='flex flex-col sm:flex-row sm:items-center gap-4 my-10 justify-center px-10 w-full mx-auto'>
+                    <select onChange={handleChange} name="year" value={year} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center p-2'>
                         <option value="" disabled hidden> Year </option>
                         <option className='bg-option text-white' value="First Year">First Year</option>
                         <option className='bg-option text-white' value="Second Year">Second Year</option>
@@ -134,7 +134,7 @@ function Search() {
                         <option className='bg-option text-white' value="htmlForth Year">Forth Year</option>
                     </select>
 
-                    <select onChange={handleChange} name="branch" value={branch} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="branch" value={branch} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center p-2'>
                         <option value="" disabled hidden>Branch</option>
                         {branches.map(branch => (
                             <option className='bg-option text-white' key={branch} value={branch}>{branch}</option>
@@ -142,19 +142,19 @@ function Search() {
                         {/* Add more branches as needed... */}
                     </select>
 
-                    <select onChange={handleChange} name="semester" value={semester} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="semester" value={semester} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center p-2'>
                         <option className='bg-option text-white' value="" disabled hidden>semester</option>
                         <option className='bg-option text-white' value="semester 1">semester 1</option>
                         <option className='bg-option text-white' value="semester 2">semester 2</option>
 
                     </select>
-                    <select onChange={handleChange} name="subject" value={subject} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="subject" value={subject} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center p-2'>
                         <option value="" disabled hidden>Subjects</option>
                         {filteredSubjects.map(subject => (
                             <option className='bg-option text-white' key={subject} value={subject}>{subject}</option>
                         ))}
                     </select>
-                    <select onChange={handleChange} name="type" value={type} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+                    <select onChange={handleChange} name="type" value={type} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center p-2'>
                         <option className='bg-option text-white' value="" disabled hidden>What Do You Want...?</option>
                         <option className='bg-option text-white' value="Notes">Notes</option>
                         <option className='bg-option text-white' value="Practicals">Practicals</option>
@@ -167,22 +167,22 @@ function Search() {
 
                 </div>
 
-                <div className='bg-whitish-blur backdrop-blur flex justify-between h-1/4 m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transhtmlForm transition-all duration-200'>
-                    <div className='ml-[20%]'>
-                        <img src="what.png" alt='' className='w-full sm:w-64 md:w-48 lg:w-40 xl:w-60' />
+                <div className='bg-whitish-blur backdrop-blur flex flex-col md:flex-row  h-full  m-10 rounded-xl hover:border border-purple-400 hover:bg-transparent hover:shadow-lg hover:scale-105 hover:shadow-glow transition-all duration-200'>
+                    {/* <div className='w-60'>
+                        <img src="what.png" alt='' className='' />
                     </div>
 
-                    <div >
-                        {/* <img src={imageSrc.hereimg}  alt="" className='w-full sm:w-64 md:w-48 lg:w-40 xl:w-60' /> */}
-                        <Slider/>
-                    </div>
-
+                    <div className='w-60'>
+                        <Slider />
+                    </div> */}
                 </div>
-                
-                <div className='flex text-white'>
+
+                <div className=' text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-5 py-10'>
                     {data.map((item, index) => (
-                        <div key={index} className="card mx-auto my-4 p-4  shadow-lg w-1/2 border border-gray-300">
+                        <div key={index} className="hover:border border-gray-300 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105   bg-whitish-blur backdrop-blur  duration-2000 ">
+                            <img src="notes.png" className=' w-16' alt="" />
                             <h2 className="text-center text-xl font-bold mb-2">{item.subtype}</h2>
+                            
                             <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-center block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Open PDF
                             </a>
@@ -190,7 +190,7 @@ function Search() {
                     ))}
                 </div>
 
-                
+
 
             </div>
         </div>

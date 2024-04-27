@@ -37,7 +37,7 @@ const Contactus = () => {
 									className="w-full  h-auto"
 								/>
 							</div>
-							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-24 ">
+							<div className="w-full md:w-1/2 flex flex-col items-center justify-center p-10 ">
 								<h2 className="text-4xl  mb-4 ">
 									Contact Us
 								</h2>

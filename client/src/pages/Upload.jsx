@@ -36,11 +36,13 @@ const Upload = () => {
 
       },
       (error) => {
-        console.log(error);
+        // console.log(error);
+        toast.error("An error occurred");
         switch (error.code) {
           case "storage/unauthorized":
             // User doesn't have permission to access the object
-            console.log(error);
+            // console.log(error);
+            toast.error("An error occurred");
             break;
           case "storage/canceled":
             // User canceled the upload
@@ -68,8 +70,16 @@ const Upload = () => {
   }
 
   const handleSubmit = async (e) => {
-    console.log(notes);
+    // console.log(notes);
     e.preventDefault();
+    if (!pdf) {
+      toast.error("Please select a PDF");
+      return;
+    }
+    if(!notes){
+      toast.error("Please Enter specifications");
+      return;
+    }
     try {
 
       await axios.post(`http://localhost:5000/api/pdfs`, {
@@ -80,7 +90,7 @@ const Upload = () => {
       toast.success("Pdf uploaded successfully");
       window.location.reload();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error("An error occurred");
     }
   };
@@ -165,7 +175,7 @@ const Upload = () => {
         setSemester(""); // Reset semester when branch changes
       } else if (name === "semester") {
         setSemester(value);
-      } 
+      }
       return updatedNotes;
     });
   };
@@ -174,65 +184,65 @@ const Upload = () => {
     <div>
       <div>
         <div className='flex gap-4 my-10 justify-center px-10'>
-          <select onChange={handleChange} name="year" value={notes.year} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="year" value={notes.year} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden> Year </option>
-            <option value="First Year">First Year</option>
-            <option value="Second Year">Second Year</option>
-            <option value="Third Year">Third Year</option>
-            <option value="Forth Year">Forth Year</option>
+            <option className='bg-option text-white'  value="First Year">First Year</option>
+            <option className='bg-option text-white' value="Second Year">Second Year</option>
+            <option className='bg-option text-white' value="Third Year">Third Year</option>
+            <option className='bg-option text-white' value="Forth Year">Forth Year</option>
           </select>
 
-          <select onChange={handleChange} name="branch" value={notes.branch} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="branch" value={notes.branch} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>Branch</option>
             {branches.map(branch => (
-              <option key={branch} value={branch}>{branch}</option>
+              <option className='bg-option text-white' key={branch} value={branch}>{branch}</option>
             ))}
             {/* Add more branches as needed... */}
           </select>
 
-          <select onChange={handleChange} name="semester" value={notes.semester} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="semester" value={notes.semester} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>semester</option>
-            <option value="semester 1">semester 1</option>
-            <option value="semester 2">semester 2</option>
+            <option className='bg-option text-white' value="semester 1">semester 1</option>
+            <option className='bg-option text-white' value="semester 2">semester 2</option>
 
           </select>
-          <select onChange={handleChange} name="subject" value={notes.subject} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
+          <select onChange={handleChange} name="subject" value={notes.subject} className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
             <option value="" disabled hidden>Subjects</option>
             {filteredSubjects.map(subject => (
-              <option key={subject} value={subject}>{subject}</option>
+              <option className='bg-option text-white' key={subject} value={subject}>{subject}</option>
             ))}
           </select>
-          <select onChange={handleChange} name="type" value={notes.type} className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'>
-            <option value="" disabled hidden>What Do You Want...?</option>
-            <option value="Notes">Notes</option>
-            <option value="Practicals">Practicals</option>
-            <option value="PYQ'S">PYQ'S</option>
-            <option value="PPT">PPT</option>
-            <option value="Tutorials">Tutorials</option>
+          <select onChange={handleChange} name="type" value={notes.type} className='w-60  sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'>
+            <option className='bg-option text-white'  value="" disabled hidden>What Do You Want...?</option>
+            <option className='bg-option text-white' value="Notes">Notes</option>
+            <option className='bg-option text-white' value="Practicals">Practicals</option>
+            <option className='bg-option text-white' value="PYQ'S">PYQ'S</option>
+            <option className='bg-option text-white' value="PPT">PPT</option>
+            <option className='bg-option text-white' value="Tutorials">Tutorials</option>
           </select>
 
           <input
-  type="text"
-  name="subtype"
-  value={notes.subtype}
-  onChange={handleChange}
-  className='w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md'
-  placeholder="Enter subtype"
-/>
+            type="text"
+            name="subtype"
+            value={notes.subtype}
+            onChange={handleChange}
+            className='w-60 sm:w-60 text-white border border-purple-500 bg-transparent rounded-md appearance-none text-center'
+            placeholder="Enter subtype"
+          />
 
         </div>
       </div>
-      <div className="flex items-center justify-center h-screen bg-off-white">
-        <form onSubmit={handleSubmit} className="w-1/2 bg-white rounded-lg shadow-2xl p-6 m-4">
+      <div className="flex items-center justify-center h-screen bg-whitish-blur backdrop-blur ">
+        <form onSubmit={handleSubmit} className="w-1/2 bg-linear-gradient backdrop-blur transition-all duration-2000  rounded-lg shadow-2xl p-6 m-4">
           <div className="mb-4">
-            <label htmlFor="pdf" className="block text-gray-700 text-2xl font-bold mb-2 ">Pdf:</label>
-            {pdfPerc > 0 && <p className="text-gray-700 text-sm mb-2">Uploading: {pdfPerc}%</p>}
+            <label htmlFor="pdf" className="block text-white text-2xl font-bold mb-2 ">Pdf:</label>
+            {pdfPerc > 0 && <p className="text-white-700 text-sm mb-2">Uploading: {pdfPerc}%</p>}
             <input
               type="file"
               accept="Pdf/*"
               id="pdf"
               onChange={(e) => setPdf((prev) => e.target.files[0])}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             />
           </div>
           <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">

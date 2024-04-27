@@ -24,7 +24,8 @@ module.exports = {
         'linear-gradient': "linear-gradient(90.4deg, rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2%)"
       }),
       backgroundColor: theme => ({
-        'whitish-blur': "rgba(255, 255, 255, 0.1)"
+        'whitish-blur': "rgba(255, 255, 255, 0.1)",
+        'darkish-blur': "rgba(0, 0, 10, 0.7)"
       }),
       backdropFilter: {
         'blur': 'blur(20px)'

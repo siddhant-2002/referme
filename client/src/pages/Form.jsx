@@ -23,7 +23,7 @@ const Form = () => {
     <div id='form'className=' bg-linear-gradient backdrop-blur transition-all duration-2000' >
       <div className="   rounded-xl bg-whitish-blur backdrop-blur  ">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-teal">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
             Admin Login
           </h2>
         </div>

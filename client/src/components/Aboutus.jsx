@@ -60,7 +60,7 @@ const Aboutus = () => {
 					</h2>
 					<br />
 					<br />
-					<p className="text-xl leading-relaxed text-center">
+					<p className="text-xl leading-relaxed text-center p-10">
 						Welcome to{" "}
 						<span className="text-white text-bold">Refer ME...!</span> We
 						are a group of passionate engineering students dedicated

@@ -18,7 +18,7 @@ body{
     left: 60%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 10px 25px 30px rgba(30,30,200,0.3);
+    // box-shadow: 10px 25px 30px rgba(30,30,200,0.3);
 }
 .wrapper{
     width: 100%;
@@ -45,10 +45,7 @@ body{
   }
 }
 
-/* ... */
-img{
-    width: 100%;
-}
+
 `;
 function Slider() {
   return (
