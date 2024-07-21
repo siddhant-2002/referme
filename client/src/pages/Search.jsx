@@ -36,7 +36,7 @@ const subjects = {
         },
     },
 
-    "htmlForth Year": {
+    "Forth Year": {
         "computer": {
             "semester 1": ["", "HPC", "AI&R", "DA", "DS"],
             "semester 2": ["", "ML", "I&CS", "Compilers", "CC"]
