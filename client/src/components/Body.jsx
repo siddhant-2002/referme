@@ -9,7 +9,7 @@ import Mission from "./Mission";
 
 const Body = () => {
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen overflow-x-hidden overflow-y-hidden">
 
 			<Home />
 
@@ -22,7 +22,7 @@ const Body = () => {
 
 			<Contactus />
 
-			{/* <Main /> */}
+			
 
 
 		</div>

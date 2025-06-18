@@ -9,7 +9,7 @@ exports.pdf = async (req, res, next) => {
   }
 
   try {
-    const pdfs = await pdf.create({
+     await pdf.create({
 
       pdfUrl,
       year,

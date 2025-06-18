@@ -1,94 +1,115 @@
-import React from 'react';
+import React from "react";
 
 const Features = () => {
-	const cards = ['Notes', 'Practicals', 'Projects', 'Question Paper'];
-	const images = ['notes1.jpg', 'practical1.jpg', 'project2.jpg', 'pyq.jpg'];
-	const desc = [
-        "Get concise notes for any topic, quick review or in-depth study.",
-        "Apply theory through real-world experiments, and case studies.",
-        "Take on transformative projects from idea to reality, challenging norms.",
-		"Access a wide range of past exam papers across subjects."
-	    ];
+  const features = [
+    {
+      title: "Notes",
+      description: "Get concise notes for any topic, quick review or in-depth study.",
+      image: "notes1.jpg",
+      icon: "📚",
+      gradient: "from-pink-400 via-purple-400 to-blue-400",
+    },
+    {
+      title: "Practicals",
+      description: "Apply theory through real-world experiments, and case studies.",
+      image: "practical1.jpg",
+      icon: "🔬",
+      gradient: "from-blue-400 via-purple-400 to-pink-400",
+    },
+    {
+      title: "Projects",
+      description: "Take on transformative projects from idea to reality, challenging norms.",
+      image: "project2.jpg",
+      icon: "💡",
+      gradient: "from-purple-400 via-pink-400 to-blue-400",
+    },
+    {
+      title: "Question Paper",
+      description: "Access a wide range of past exam papers across subjects.",
+      image: "pyq.jpg",
+      icon: "📝",
+      gradient: "from-blue-400 via-pink-400 to-purple-400",
+    },
+  ];
 
-	return (
-		<div>
-			<div>
-				<style>
-					{`
-						* {
-							padding: 0;
-							margin: 0;
-							box-sizing: border-box;
-						}
-						
-						body {
-							background: linear-gradient(to bottom, #54a1f4, #b620f6);
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							min-height: 100vh;
-						}
-						
-						.wave {
-							position: relative;
-						}
-						
-						.wave span {
-							position: relative;
-							display: inline-block;
-							font-size: 40px;
-							color: #fff;
-							text-transform: uppercase;
-							animation: flip 2s infinite;
-							animation-delay: calc(.2s * var(--i))
-						}
-						
-						@keyframes flip {
-						
-							0%,
-							80% {
-								transform: rotateY(360deg)
-							}
-						}
-					`}
-				</style>
-			</div>
-			<div className="rounded-xl m-2 flex flex-col items-center justify-center  text-white  backdrop-blur transition-all duration-2000">
-				<div id="features" className=" md:flex-row justify-between  ">
-					<div className="p-6">
-						<h2 className="text-4xl mb-4 font-body flex justify-center items-center ">
-							<div className="wave justify-center items-center border-b border-white-500 py-5">
-								<span style={{ '--i': 1 }}>F </span>
-								<span style={{ '--i': 2 }}>e </span>
-								<span style={{ '--i': 3 }}>a </span>
-								<span style={{ '--i': 4 }}>t </span>
-								<span style={{ '--i': 5 }}>u </span>
-								<span style={{ '--i': 6 }}>r</span>
-								<span style={{ '--i': 7 }}>e</span>
-								<span style={{ '--i': 8 }}>s</span>
-							</div>
-						</h2>
-						<br />
-						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 p-5 py-10">
-							{cards.map((card, index) => (
-								<div className="hover:border border-gray-300 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-500 flex flex-col items-center transform hover:scale-105 transition-transform duration-300    bg-whitish-blur backdrop-blur transition-all duration-2000 " key={index}>
-									<h2 className="font-semibold text-xl mb-2 text-center ">{card}</h2>
-									<img
-										src={images[index]}
-										className="w-3/4 h-auto my-4 rounded-3xl"
-										alt={card}
-									/>
-									<p className="text-center">{desc[index]}</p>
-								</div>
-							))}
-						</div>
+  return (
+    <section
+      id="features"
+      className="relative w-full flex items-center justify-center"
+    >
+      {/* Background shape */}
+      {/* <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-15%] right-[-10%] w-[500px] h-[500px] opacity-20 animate-spin-slow-reverse">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="featuresGradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#f472b6" />
+                <stop offset="100%" stopColor="#60a5fa" />
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="200" fill="url(#featuresGradient)" />
+          </svg>
+        </div>
+      </div> */}
 
-					</div>
-				</div>
-			</div>
-		</div>
+      <div className="relative z-10 w-full max-w-7xl px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">
+            Our{" "}
+            <span className="relative inline-block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 animate-gradient">
+                Features
+              </span>
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 rounded-full"></span>
+            </span>
+          </h1>
+        </div>
 
-	);
-}
+        {/* Grid Layout (Preserved as it is) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`relative overflow-hidden bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-800 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } flex flex-col md:flex`}
+              style={{ height: "260px" }} // Scaled height
+            >
+              {/* Image */}
+              <div className="relative w-full md:w-1/2 h-40 md:h-full">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
+                <div className="absolute bottom-3 left-4 text-3xl">{feature.icon}</div>
+              </div>
+
+              {/* Content */}
+              <div className="w-full md:w-1/2 p-4 flex flex-col justify-center">
+                <h3
+                  className={`font-bold text-xl mb-2 text-transparent bg-clip-text bg-gradient-to-r ${feature.gradient}`}
+                >
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-300">{feature.description}</p>
+                <div
+                  className={`mt-3 w-16 h-1 bg-gradient-to-r ${feature.gradient} rounded-full`}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Decoration */}
+        <div className="mt-10 flex justify-center">
+          <div className="w-20 h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Features;
