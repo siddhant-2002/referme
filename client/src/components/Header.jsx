@@ -19,7 +19,7 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ isAuthenticated }) => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -51,6 +51,7 @@ const Header = () => {
     { to: "/#features", label: "Features" },
     { to: "/#contactus", label: "Contact Us" },
     { to: "/Form", label: "Login" },
+    { to: "/signup", label: "Sign Up" },
   ];
 
   return (

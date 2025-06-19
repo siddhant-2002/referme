@@ -9,6 +9,7 @@ import Form from "./pages/Form";
 import Upload from "./pages/Upload";
 import Search from "./pages/Search";
 import Loader from "./components/Loader";
+import Signup from "./pages/Signup";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/Form" element={<Form />} />
           <Route path="/Upload" element={<Upload />} />
           <Route path="/Search" element={<Search />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
       </div>
