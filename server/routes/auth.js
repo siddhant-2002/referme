@@ -1,39 +1,7 @@
 const express = require('express');
 const authRouter = express.Router();
-const { validateSignUpData } = require('../utils/validation');
 const RegisterSchema = require('../models/register');
 const bcrypt = require('bcrypt');
-
-authRouter.post('/signup', async (req, res) => {
-    try{
-        // validation of data
-        validateSignUpData(req);
-
-        const {name, email, mobile, year, branch, password, confirmPassword} = new RegisterSchema(req.body);
-
-        // Encrypt the password
-        const passwordHash = await bcrypt.hash(password, 10);
-
-        // Creating a new instance of the RegisterSchema
-        const user = new RegisterSchema({
-            name,
-            email,
-            mobile,
-            year,
-            branch,
-            password: passwordHash,
-            confirmPassword: passwordHash // Store the hashed password
-        });
-
-        await user.save();
-
-        res.json("true");
-    }
-    catch(err)
-    {
-        res.status(400).send("Error: " + err.message);
-    }
-})
 
 authRouter.post('/login', async (req, res) => {
     try {
