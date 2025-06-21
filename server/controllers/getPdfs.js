@@ -1,4 +1,4 @@
-const Pdf = require('../models/pdf'); // replace with your actual model
+const Pdf = require('../models/pdf'); 
 
 exports.getPdfs = async (req, res) => {
   try {

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Slider from "../components/Slider";
 import Loaderr from "../components/Loadeerr";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const subjects = {
   "First Year": {
@@ -109,7 +111,7 @@ function Search() {
       setOn(true);
       setSearchCount((prev) => prev + 1);
       const response = await axios.get(
-        `https://referme.onrender.com/api/pdfs`,
+        `http://localhost:5000/getpdfs`,
         {
           params: {
             year: notes.year,
@@ -123,6 +125,9 @@ function Search() {
       setData(response.data);
       setOn(false);
       displayRef.current.scrollIntoView({ behavior: "smooth" });
+
+      if(response.data.length > 0) {toast.success("Pdf Fetched Succesfully")}
+      else {toast.error("No Pdf Found")}
       // setImageSrc('here.png');
     } catch (error) {
       console.log(error);

@@ -1,10 +1,10 @@
 const express = require("express");
-const router = express.Router();
+const PdfRouter = express.Router();
 
-const {pdf} = require("../controllers/pdf");
+const {postpdf} = require("../controllers/postpdf");
 const {getPdfs} = require("../controllers/getPdfs");
 
-router.post("/", pdf);
-router.get("/", getPdfs);
+PdfRouter.post("/Postpdfs", postpdf);
+PdfRouter.get("/getpdfs", getPdfs);
 
-module.exports = router;
+module.exports = PdfRouter;

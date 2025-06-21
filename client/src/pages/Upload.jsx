@@ -84,14 +84,14 @@ const Upload = () => {
       return;
     }
     try {
-      await axios.post(`https://referme.onrender.com/api/pdfs`, {
+      await axios.post(`http://localhost:5000/Postpdfs`, {
         ...inputs,
         ...notes,
       });
       toast.success("Pdf uploaded successfully");
       // window.location.reload();
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       toast.error("An error occurred");
     }
   };

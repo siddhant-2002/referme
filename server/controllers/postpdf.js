@@ -1,8 +1,9 @@
 const pdf = require('../models/pdf');
 
-exports.pdf = async (req, res, next) => {
+exports.postpdf = async (req, res, next) => {
 
   const { pdfUrl, year, branch, semester, subject, type, subtype } = req.body;
+  console.log(req.body);
   if (!pdfUrl) {
     res.status(400);
     return next(new Error("pdfUrl fields are required"));
